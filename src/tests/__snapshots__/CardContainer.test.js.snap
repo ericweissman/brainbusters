@@ -1,0 +1,426 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardContainer should match snapshot when all data is passed correctly 1`] = `
+<div
+  className="card-container"
+>
+  <QuestionCard
+    answers={
+      Array [
+        ".sort()",
+        ".reduce()",
+        ".forEach()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".reduce()"
+    id={1}
+    key="1"
+    question="What array prototype method would return a sum of the elements in an array?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".pop()",
+        ".shift()",
+        ".map()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".shift()"
+    id={2}
+    key="2"
+    question="Which prototype method returns the first element in an array?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".toCapitalize()",
+        ".uppercase()",
+        ".toUpperCase()",
+      ]
+    }
+    concept="strings"
+    correct_answer=".toUpperCase()"
+    id={3}
+    key="3"
+    question="Which string method will return a string with all the characters converted to capital letters?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".concat()",
+        ".join()",
+        ".mesh()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".concat()"
+    id={4}
+    key="4"
+    question="Which prototype method joins two arrays together?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".indexOf()",
+        ".index()",
+        ".findElement()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".indexOf()"
+    id={5}
+    key="5"
+    question="Which prototype method returns the first index at which a given element can be found in the array? (Or -1 if it is not present)
+"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".indexOf()",
+        ".reduce()",
+        ".arrayFrom()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".reduce()"
+    id={6}
+    key="6"
+    question="Which prototype method can return objects AND arrays?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        "Object.keys()",
+        "Object.values()",
+        "Object.assign()",
+      ]
+    }
+    concept="objects"
+    correct_answer="Object.keys()"
+    id={7}
+    key="7"
+    question="Which method will return the keys of a given object?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".map()",
+        ".forEach()",
+        ".find()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".forEach()"
+    id={8}
+    key="8"
+    question="Which prototype method will return undefined?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        "Object.keys()",
+        "Object.keyValues()",
+        "Object.values()",
+      ]
+    }
+    concept="objects"
+    correct_answer="Object.values()"
+    id={9}
+    key="9"
+    question="Which method will return the values of af given object?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".find()",
+        ".filter()",
+        ".forEach()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".find()"
+    id={10}
+    key="10"
+    question="Which prototype method returns the first value that meets a certain condition?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".pop()",
+        ".push()",
+        ".shift()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".push()"
+    id={11}
+    key="11"
+    question="You want to add an element to the end of an array. Which method should you use?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        "object",
+        "array",
+        "prototype",
+      ]
+    }
+    concept="objects"
+    correct_answer="object"
+    id={12}
+    key="12"
+    question="This data type stores information in key-value pairs."
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".find()",
+        ".concat()",
+        ".filter()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".filter()"
+    id={13}
+    key="13"
+    question="Which prototype method returns a new array with all elements that match a certain condition?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".concat()",
+        ".smush()",
+        ".join()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".join()"
+    id={14}
+    key="14"
+    question="Which prototype method returns a string of all the elements in an array combined?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        "true",
+        "false",
+      ]
+    }
+    concept="prototypes"
+    correct_answer="false"
+    id={15}
+    key="15"
+    question="All prototype methods mutate or change the original array."
+  />
+  <QuestionCard
+    answers={
+      Array [
+        "true",
+        "false",
+      ]
+    }
+    concept="objects"
+    correct_answer="false"
+    id={16}
+    key="16"
+    question="Array prototype methods can be used directly on an object."
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".includes()",
+        ".instanceOf()",
+        ".forEach()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".includes()"
+    id={17}
+    key="17"
+    question="Which prototype method will check whether an array includes a certain value?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".switch()",
+        ".sort()",
+        ".reverse()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".reverse()"
+    id={18}
+    key="18"
+    question="Which prototype will reverse the arraty in place?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".toLower()",
+        ".lowercase()",
+        ".toLowerCase()",
+      ]
+    }
+    concept="strings"
+    correct_answer=".toLowerCase()"
+    id={19}
+    key="19"
+    question="Which string method will return a string with all the characters converted to lowercase letters?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".map()",
+        ".forEach()",
+        ".reduce()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".map()"
+    id={20}
+    key="20"
+    question="Which prototype method returns an array of the same length as the original array?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".concat()",
+        ".join()",
+        ".mesh()",
+      ]
+    }
+    concept="strings"
+    correct_answer=".concat()"
+    id={21}
+    key="21"
+    question="Which string method will combine two strings together?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".number()",
+        ".count()",
+        ".length()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".length()"
+    id={22}
+    key="22"
+    question="What method will return the number of items in an array?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        "iterator notation",
+        "dot notation",
+        "bracket notation",
+      ]
+    }
+    concept="objects"
+    correct_answer="iterator notation"
+    id={23}
+    key="23"
+    question="Which was in NOT a method to access the values of an object?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".sort()",
+        ".shift()",
+        ".map()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".sort()"
+    id={24}
+    key="24"
+    question="Which method would you use to alphabetize an array?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".push()",
+        ".shift()",
+        ".pop()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".pop()"
+    id={25}
+    key="25"
+    question="Which prototype method will return the last element in an array?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        "true",
+        "false",
+      ]
+    }
+    concept="prototypes"
+    correct_answer="false"
+    id={26}
+    key="26"
+    question="forEach() cannot manipulate elements in an array since it does not return anything."
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".pop()",
+        ".shift()",
+        ".unshift()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".unshift()"
+    id={27}
+    key="27"
+    question="Which prototype method adds an element to the beggining of an array?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".fill()",
+        ".map()",
+        ".forEach()",
+      ]
+    }
+    concept="prototypes"
+    correct_answer=".fill()"
+    id={28}
+    key="28"
+    question="Which prototype method fills all the elements of an array with a static value?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        "Object.keys()",
+        "Object.assign()",
+        "Object.values()",
+      ]
+    }
+    concept="objects"
+    correct_answer="Object.assign()"
+    id={29}
+    key="29"
+    question="Which method will copy the values of an object or multiple objects to another object?"
+  />
+  <QuestionCard
+    answers={
+      Array [
+        ".find()",
+        ".charAt()",
+        ".includes()",
+      ]
+    }
+    concept="strings"
+    correct_answer=".includes()"
+    id={30}
+    key="30"
+    question="Which string method will check whether a string can be found within another string?"
+  />
+</div>
+`;

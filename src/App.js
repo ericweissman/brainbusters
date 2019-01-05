@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import CardContainer from './CardContainer';
-// import {ewQuestions} from './Dataset'
 import './styles/Main.scss';
 
 class App extends Component {
@@ -10,7 +9,6 @@ class App extends Component {
 
     this.state = {
       questions: []
-      // questions: ewQuestions
     }
   }
   componentDidMount() {
