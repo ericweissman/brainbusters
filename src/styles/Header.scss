@@ -7,7 +7,12 @@ header {
   text-transform: uppercase;
 }
 
-nav {
+.user-controls {
   display: flex;
   flex-direction: column;
+  width: 400px;
+}
+
+.instructions-shown {
+  background-color: rebeccapurple;
 }

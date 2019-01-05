@@ -21,14 +21,12 @@ class Header extends Component {
       return (
         <header className="header">
           <h1><i className="fas fa-brain" />Brainbusters</h1>
-          <div>
+          <div className="user-controls">
             <button className="toggle-instructions-btn"onClick={this.toggleInstructionsShown}>Show Instructions</button>
-            <div>
               <select>
                 <option value="show-all">Show All Questions</option>
                 <option value="show-studylist">Study List Only</option>
               </select>
-            </div>
           </div>
         </header>
       )
@@ -36,7 +34,7 @@ class Header extends Component {
       return (
         <header className="header">
           <h1><i className="fas fa-brain" />Brainbusters</h1>
-          <div>
+          <div className="instructions-shown">
             <Instructions />
             <button className="toggle-instructions-btn" onClick={this.toggleInstructionsShown}>Got it!</button>
           </div>
