@@ -4,10 +4,9 @@ import './styles/Main.scss'
 
 class CardContainer extends Component {
   render() {
-    let { questions } = this.props.questions;
     return (
       <div className-="card-container">
-        {questions.map((element) => {
+        {this.props.questions.map((element) => {
           let { id, question, answers, correct_answer, concept } = element;
             return (
               <QuestionCard

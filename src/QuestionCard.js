@@ -8,7 +8,7 @@ class QuestionCard extends Component {
         <p>{this.props.question}</p>
         <ul>
           {
-            this.props.answers.map((answer) => {
+            this.props.answers.split(' ').map((answer) => {
               return (
                 <li>{answer}</li>
               )
