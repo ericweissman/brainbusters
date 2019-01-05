@@ -22,7 +22,7 @@ class Header extends Component {
         <header className="header">
           <h1><i className="fas fa-brain" />Brainbusters</h1>
           <div>
-            <button className="toggle-instructions-btn"onClick={this.toggleInstructionsShown}>Instructions</button>
+            <button className="toggle-instructions-btn"onClick={this.toggleInstructionsShown}>Show Instructions</button>
             <div>
               <select>
                 <option value="show-all">Show All Questions</option>
@@ -37,24 +37,10 @@ class Header extends Component {
         <header className="header">
           <h1><i className="fas fa-brain" />Brainbusters</h1>
           <div>
-            <button className="toggle-instructions-btn" onClick={this.toggleInstructionsShown}>Hide Instructions</button>
             <Instructions />
-            <div>
-              <select>
-                <option value="show-all">Show All Questions</option>
-                <option value="show-studylist">Study List Only</option>
-              </select>
-            </div>
+            <button className="toggle-instructions-btn" onClick={this.toggleInstructionsShown}>Got it!</button>
           </div>
         </header>
-        // <header className="header">
-        //   <h1><i className="fas fa-brain" />Brainbusters</h1>
-        //   <div>
-        //     <Instructions 
-        //       hideInstructions={this.toggleInstructionsShown}
-        //     />
-        //   </div>
-        // </header>
       )
     }
     
