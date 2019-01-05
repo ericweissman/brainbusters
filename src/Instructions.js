@@ -8,7 +8,6 @@ class Instructions extends Component {
         <p>Each card is a multiple choice question. Click on the answer you think is correct!</p>
         <p>If you get the answer incorrect, you will have the option to save it later for review in your Study List.</p>
         <p>If you want to view the questions you missed, choose Study List Only from the dropdown!</p>
-        <button onClick={this.props.hideInstructions}>Got it!</button>
       </div>
     )
   }
