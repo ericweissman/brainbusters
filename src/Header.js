@@ -5,17 +5,19 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="header">
-        <i className="fas fa-brain" />
-        <h1>Brainbusters</h1>
-        <div>
+      <header className="header">
+        
+        <h1><i className="fas fa-brain"/>Brainbusters</h1>
+        <nav>
           <button>Instructions</button>
           <div>
-            <button>All Questions</button>
-            <button>Study List</button>
+            <select>
+              <option value="show-all">Show All Questions</option>
+              <option value="show-studylist">Study List Only</option>
+            </select>
           </div>
-        </div>
-      </div>
+        </nav>
+      </header>
     )
   }
 }
