@@ -11,12 +11,8 @@ class Header extends Component {
   }
 
   toggleInstructionsShown = () => {
-    // event.preventDefault();
-    console.log(this)
-
-    let test = !this.state.showInstructions
     this.setState({
-      showInstructions: test
+      showInstructions: !this.state.showInstructions
     })
   }
 
@@ -26,7 +22,7 @@ class Header extends Component {
         <header className="header">
           <h1><i className="fas fa-brain" />Brainbusters</h1>
           <div>
-            <button onClick={this.toggleInstructionsShown}>Instructions</button>
+            <button className="toggle-instructions-btn"onClick={this.toggleInstructionsShown}>Instructions</button>
             <div>
               <select>
                 <option value="show-all">Show All Questions</option>
