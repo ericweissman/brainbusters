@@ -5,12 +5,13 @@ import './styles/Main.scss'
 class CardContainer extends Component {
   render() {
     return (
-      <div className-="card-container">
+      <div className="card-container">
         {this.props.questions.map((element) => {
           let { id, question, answers, correct_answer, concept } = element;
             return (
               <QuestionCard
                 key={id}
+                id={id}
                 question={question}
                 answers={answers}
                 correct_answer={correct_answer}
@@ -19,6 +20,7 @@ class CardContainer extends Component {
             )
       })}
       </div>
+
     )
   }
 }
