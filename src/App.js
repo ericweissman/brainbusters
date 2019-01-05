@@ -28,7 +28,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <CardContainer />
+        <CardContainer 
+          questions={this.state.questions}
+        />
       </div>
     );
   }
