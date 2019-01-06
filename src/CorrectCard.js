@@ -8,7 +8,7 @@ class CorrectCard extends Component {
         <h4>Correct!</h4>
         <p>{this.props.question}</p>
         <p>{this.props.correct_answer}</p>
-        <button>Back to Quiz</button>
+        <button onClick={this.props.reset}>Back to Quiz</button>      
       </div>
     )
   }

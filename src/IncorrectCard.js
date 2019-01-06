@@ -11,7 +11,7 @@ class IncorrectCard extends Component {
         <p>Your Answer: {this.props.incorrect_answer}</p>
         <div className="incorrect-btns">
           <button>Add to Study List</button>
-          <button>Back to Quiz</button>
+          <button onClick={this.props.reset}>Back to Quiz</button>
         </div>
       </div>
     )

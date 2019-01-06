@@ -11,7 +11,7 @@ class QuestionCard extends Component {
     }
   }
 
-  evaluateGuess= (event) => {
+  evaluateGuess = (event) => {
     let guess = event.target.innerText;
     let answer = this.props.correct_answer;
 
@@ -25,6 +25,12 @@ class QuestionCard extends Component {
         incorrect_answer: guess
       })
     }
+  }
+
+  backToCards = () => {
+    this.setState({
+      answered_correctly: null
+    })
   }
 
   render() {
@@ -43,21 +49,43 @@ class QuestionCard extends Component {
           </div>
         </div>
       )
-    } else if (this.state.answered_correctly === true) {
+    } else if (this.state.answered_correctly) {
       return (
-        <CorrectCard 
-          question={this.props.question}
-          correct_answer={this.props.correct_answer}
-        />
+        <div className="correct-card">
+          <h4>Correct!</h4>
+          <p>{this.props.question}</p>
+          <p>{this.props.correct_answer}</p>
+          <button onClick={this.backToCards}>Back to Quiz</button>
+        </div>
       )
-    } else if (this.state.answered_correctly === false) {
+      // return (
+      //   <CorrectCard 
+      //     question={this.props.question}
+      //     correct_answer={this.props.correct_answer}
+      //     reset={this.backToCards}
+      //   />
+      // )
+    } else {
       return (
-        <IncorrectCard 
-          question={this.props.question}
-          correct_answer={this.props.correct_answer}
-          incorrect_answer={this.state.incorrect_answer}
-        />
+        <div className="incorrect-card">
+          <h4>Wrong!</h4>
+          <p>{this.props.question}</p>
+          <p>Correct Answer: {this.props.correct_answer}</p>
+          <p>Your Answer: {this.state.incorrect_answer}</p>
+          <div className="incorrect-btns">
+            <button>Add to Study List</button>
+            <button onClick={this.backToCards}>Back to Quiz</button>
+          </div>
+        </div>
       )
+      // return (
+      //   <IncorrectCard 
+      //     question={this.props.question}
+      //     correct_answer={this.props.correct_answer}
+      //     incorrect_answer={this.state.incorrect_answer}
+      //     reset={this.backToCards}
+      //   />
+      // )
     }
   } 
 }
