@@ -6,8 +6,8 @@ class CorrectCard extends Component {
     return(
       <div className="correct-card">
         <h4>Correct!</h4>
-        <p>Pass Question down from Card</p>
-        <p>Pass Correct answer down from Card</p>
+        <p>{this.props.question}</p>
+        <p>{this.props.correct_answer}</p>
         <button>Back to Quiz</button>
       </div>
     )
