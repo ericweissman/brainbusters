@@ -11,7 +11,7 @@ class App extends Component {
       questions: [],
       studyList: [],
       showStudyList: false,
-      guessedCards: [],
+      guessedQuestions: [],
       questionIndex: 0
     }
   }
@@ -75,8 +75,17 @@ class App extends Component {
     })
   }
 
-  updateGuessedCards = () => {
-    const questionsArr = [...this.state.questions]
+  updateGuessedCards = (id) => {
+    const questionsArr = [...this.state.questions];
+    const guessedArr = [...this.state.guessedQuestions];
+    const guessed = questionsArr.filter((elem) => {
+      return elem.id === id && !guessedArr.includes(elem)
+    })
+    guessedArr.push(...guessed)
+    
+    this.setState({
+      guessedQuestions: guessedArr
+    })
 
   }
 
@@ -97,7 +106,9 @@ class App extends Component {
               updateStudyList={this.updateStudyList}
               studyList={this.state.studyList}
               showStudyList={this.state.showStudyList}
+              updateGuessedCards={this.updateGuessedCards}
               updateQuestionIndex={this.updateQuestionIndex}
+              guessedQuestions={this.state.guessedQuestions}
             />
           }
         </div>

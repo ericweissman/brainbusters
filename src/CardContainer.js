@@ -4,11 +4,30 @@ import './styles/Main.scss'
 
 class CardContainer extends Component {
   render() {
-    let { questions, updateStudyList, studyList, showStudyList } = this.props 
+    let { questions, updateStudyList, studyList, showStudyList, updateGuessedCards, guessedQuestions } = this.props 
     if (!showStudyList) {
       return (
         <div className="card-container">
           {questions.map((element) => {
+            let { id, question, answers, correct_answer, concept } = element;
+            if (!guessedQuestions.includes(element)) {
+            // if (guessedQuestions.indexOf(element) === -1) {
+              return (
+                <QuestionCard
+                  key={id}
+                  id={id}
+                  question={question}
+                  answers={answers}
+                  correct_answer={correct_answer}
+                  concept={concept}
+                  updateStudyList={updateStudyList}
+                  updateGuessedCards={updateGuessedCards}
+                />
+              )
+            }
+          })}
+          {/* {questions.map((element) => {
+            //adjust to filter if !guessedquestions.includes(elementID) then return the card
             let { id, question, answers, correct_answer, concept } = element;
             return (
               <QuestionCard
@@ -19,9 +38,10 @@ class CardContainer extends Component {
                 correct_answer={correct_answer}
                 concept={concept}
                 updateStudyList={updateStudyList}
+                updateGuessedCards={updateGuessedCards}
               />
             )
-          })}
+          })} */}
         </div>
       )
     } else {

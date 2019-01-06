@@ -9,10 +9,7 @@ class IncorrectCard extends Component {
         <p>{this.props.question}</p>
         <p>Correct Answer: {this.props.correct_answer}</p>
         <p>Your Answer: {this.props.incorrect_answer}</p>
-        <div className="incorrect-btns">
-          <button>Add to Study List</button>
-          <button onClick={this.props.reset}>Back to Quiz</button>
-        </div>
+        <button onClick={() => this.props.updateGuessedCards(this.props.id)}>Back to Quiz</button>
       </div>
     )
   }
