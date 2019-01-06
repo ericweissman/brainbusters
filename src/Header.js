@@ -16,6 +16,13 @@ class Header extends Component {
     })
   }
 
+  showStudyList = (event) => {
+    console.log(event.target.value)
+    if (event.target.value === 'show-studylist') {
+      return this.props.toggle
+    }
+  }
+
   render() {
     if (this.state.showInstructions === false) {
       return (
@@ -23,7 +30,7 @@ class Header extends Component {
           <h1><span>Brain</span><i className="fas fa-brain" /><span>Buster</span></h1>
           <div className="user-controls">
             <button className="toggle-instructions-btn"onClick={this.toggleInstructionsShown}>Show Instructions</button>
-              <select>
+              <select onChange={this.showStudyList}>
                 <option value="show-all">Show All Questions</option>
                 <option value="show-studylist">Study List Only</option>
               </select>

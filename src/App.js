@@ -26,22 +26,36 @@ class App extends Component {
       })
     }
 
+  toggleCardsToShow = () => {
+    this.setState({
+      showStudyList: !this.state.showStudyList
+    })
+  }
+
   updateStudyList = (id) => {
-    let missedQuestions = [...this.state.studyList];
-    missedQuestions.push(id)
+    const questions = [...this.state.questions]
+    const studyList = [...this.state.studyList];
+    const missedQuestions = questions.filter((question) => {
+      return question.id === id
+    })
+
+    studyList.push(missedQuestions)
 
     this.setState({
-      studyList: missedQuestions
+      studyList: studyList
     })
   }
 
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header 
+          toggle={this.toggleCardsToShow}
+        />
         <CardContainer 
           questions={this.state.questions}
           updateStudyList={this.updateStudyList}
+          studyList={this.state.studyList}
           showStudyList={this.state.showStudyList}
         />
       </div>
