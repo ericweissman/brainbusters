@@ -9,7 +9,8 @@ class App extends Component {
 
     this.state = {
       questions: [],
-      studyList: []
+      studyList: [],
+      showStudyList: false
     }
   }
   componentDidMount() {
@@ -25,9 +26,9 @@ class App extends Component {
       })
     }
 
-  updateStudyList = (question) => {
+  updateStudyList = (id) => {
     let missedQuestions = [...this.state.studyList];
-    missedQuestions.push(question)
+    missedQuestions.push(id)
 
     this.setState({
       studyList: missedQuestions
@@ -41,6 +42,7 @@ class App extends Component {
         <CardContainer 
           questions={this.state.questions}
           updateStudyList={this.updateStudyList}
+          showStudyList={this.state.showStudyList}
         />
       </div>
     );
