@@ -24,7 +24,18 @@ class App extends Component {
       .catch(err => {
         this.setState({ error: err })
       })
+
+      this.populateStudyList()
     }
+
+  populateStudyList = () => {
+    if (Object.keys(localStorage).length > 0) {
+      const savedStudyList = JSON.parse(localStorage.getItem('StudyList'))
+      this.setState({
+        studyList: savedStudyList
+      })
+    }
+  }
 
   toggleCardsToShow = () => {
     this.setState({
