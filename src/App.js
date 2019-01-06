@@ -10,7 +10,9 @@ class App extends Component {
     this.state = {
       questions: [],
       studyList: [],
-      showStudyList: false
+      showStudyList: false,
+      guessedCards: [],
+      questionIndex: 0
     }
   }
   componentDidMount() {
@@ -26,7 +28,12 @@ class App extends Component {
       })
 
       this.populateStudyList()
+      return true;
     }
+
+  updateQuestionIndex = () => {
+    
+  }
 
   populateStudyList = () => {
     if (Object.keys(localStorage).length > 0) {
@@ -58,21 +65,33 @@ class App extends Component {
     })
   }
 
-  render() {
-    return (
-      <div className="App">
-        <Header 
-          toggle={this.toggleCardsToShow}
-        />
-        <CardContainer 
-          questions={this.state.questions}
-          updateStudyList={this.updateStudyList}
-          studyList={this.state.studyList}
-          showStudyList={this.state.showStudyList}
-        />
-      </div>
-    );
+  updateGuessedCards = () => {
+    const questionsArr = [...this.state.questions]
+
   }
-}
+
+  
+  render() {
+      let index = this.state.questionIndex
+      let currentQuestion = this.state.questions[index];
+      return (
+        <div className="App">
+          <Header
+            toggle={this.toggleCardsToShow}
+          />
+          {
+            this.state.questions.length > 0 &&
+             <CardContainer
+              currentQuestion={currentQuestion}
+              questions={this.state.questions}
+              updateStudyList={this.updateStudyList}
+              studyList={this.state.studyList}
+              showStudyList={this.state.showStudyList}
+            />
+          }
+        </div>
+      );
+    }
+  }
 
 export default App;

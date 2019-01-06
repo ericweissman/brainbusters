@@ -74,10 +74,7 @@ class QuestionCard extends Component {
           <p>{this.props.question}</p>
           <p>Correct Answer: {this.props.correct_answer}</p>
           <p>Your Answer: {this.state.incorrect_answer}</p>
-          <div className="incorrect-btns">
-            <button>Add to Study List</button>
-            <button onClick={this.backToCards}>Back to Quiz</button>
-          </div>
+          <button onClick={this.backToCards}>Back to Quiz</button>
         </div>
       )
       // return (
