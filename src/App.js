@@ -28,11 +28,21 @@ class App extends Component {
       })
 
       this.populateStudyList()
-      return true;
     }
 
-  updateQuestionIndex = () => {
-    
+  updateQuestionIndex = (event) => {
+    let currentIndex = this.state.questionIndex
+    console.log(event.target.innerText)
+    if (event.target.className === 'down') {
+      console.log(event.target.innerText)
+      this.setState({
+        questionIndex: currentIndex - 1
+      })
+    } else if (event.target.className === 'up') {
+      this.setState({
+        questionIndex: currentIndex + 1
+      })
+    }
   }
 
   populateStudyList = () => {
@@ -87,6 +97,7 @@ class App extends Component {
               updateStudyList={this.updateStudyList}
               studyList={this.state.studyList}
               showStudyList={this.state.showStudyList}
+              updateQuestionIndex={this.updateQuestionIndex}
             />
           }
         </div>

@@ -1,6 +1,7 @@
 .card-container {
-display: grid;
-grid-template-columns: 1fr 1fr;
+  display: grid;
   background: $grey;
+  align-items: center;
+  justify-content: center;
 }
 
