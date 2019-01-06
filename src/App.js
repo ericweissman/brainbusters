@@ -39,7 +39,8 @@ class App extends Component {
       return question.id === id
     })
 
-    studyList.push(missedQuestions)
+    studyList.push(...missedQuestions)
+    localStorage.setItem('StudyList', JSON.stringify(studyList))
 
     this.setState({
       studyList: studyList

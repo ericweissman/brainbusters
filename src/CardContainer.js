@@ -4,10 +4,12 @@ import './styles/Main.scss'
 
 class CardContainer extends Component {
   render() {
-    return (
-      <div className="card-container">
-        {this.props.questions.map((element) => {
-          let { id, question, answers, correct_answer, concept } = element;
+    let { questions, updateStudyList, studyList, showStudyList } = this.props 
+    if (!showStudyList) {
+      return (
+        <div className="card-container">
+          {questions.map((element) => {
+            let { id, question, answers, correct_answer, concept } = element;
             return (
               <QuestionCard
                 key={id}
@@ -16,13 +18,32 @@ class CardContainer extends Component {
                 answers={answers}
                 correct_answer={correct_answer}
                 concept={concept}
-                updateStudyList={this.props.updateStudyList}
+                updateStudyList={updateStudyList}
               />
             )
-      })}
-      </div>
-
-    )
+          })}
+        </div>
+      )
+    } else {
+      return (
+        <div className="card-container">
+          {studyList.map((element) => {
+            let { id, question, answers, correct_answer, concept } = element;
+            return (
+              <QuestionCard
+                key={id}
+                id={id}
+                question={question}
+                answers={answers}
+                correct_answer={correct_answer}
+                concept={concept}
+                updateStudyList={updateStudyList}
+              />
+            )
+          })}
+        </div>
+      )
+    }
   }
 }
 
