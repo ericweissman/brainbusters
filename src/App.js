@@ -8,7 +8,8 @@ class App extends Component {
     super();
 
     this.state = {
-      questions: []
+      questions: [],
+      studyList: []
     }
   }
   componentDidMount() {
@@ -24,12 +25,22 @@ class App extends Component {
       })
     }
 
+  updateStudyList = (question) => {
+    let missedQuestions = [...this.state.studyList];
+    missedQuestions.push(question)
+
+    this.setState({
+      studyList: missedQuestions
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
         <CardContainer 
           questions={this.state.questions}
+          updateStudyList={this.updateStudyList}
         />
       </div>
     );

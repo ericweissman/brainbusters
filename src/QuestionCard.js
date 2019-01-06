@@ -20,10 +20,19 @@ class QuestionCard extends Component {
         answered_correctly: true
       })
     } else {
+      let missedCard = {
+        id: this.props.id,
+        question: this.props.question,
+        answers: this.props.answers,
+        correct_answer: this.props.correct_answer,
+        concept: this.props.concept
+      }
+      // console.log(missedCard)
       this.setState({
         answered_correctly: false,
         incorrect_answer: guess
       })
+      this.props.updateStudyList(missedCard)
     }
   }
 

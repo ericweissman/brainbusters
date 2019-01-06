@@ -16,6 +16,7 @@ class CardContainer extends Component {
                 answers={answers}
                 correct_answer={correct_answer}
                 concept={concept}
+                updateStudyList={this.props.updateStudyList}
               />
             )
       })}
