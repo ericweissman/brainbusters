@@ -20,7 +20,7 @@ class Header extends Component {
     if (this.state.showInstructions === false) {
       return (
         <header className="header">
-          <h1><i className="fas fa-brain" />Brainbusters</h1>
+          <h1><span>Brain</span><i className="fas fa-brain" /><span>Buster</span></h1>
           <div className="user-controls">
             <button className="toggle-instructions-btn"onClick={this.toggleInstructionsShown}>Show Instructions</button>
               <select>
