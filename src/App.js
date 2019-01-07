@@ -53,6 +53,8 @@ class App extends Component {
     })
     if (!studyList.includes(missedQuestions.id)) {
       studyList.push(missedQuestions.id)
+    } else if (studyList.includes(missedQuestions.id)) {
+      alert('hi')
     }
     this.setState({
       studyList: studyList

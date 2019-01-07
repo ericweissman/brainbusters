@@ -21,6 +21,7 @@ class CardContainer extends Component {
                   concept={concept}
                   updateStudyList={updateStudyList}
                   updateGuessedCards={updateGuessedCards}
+                  showAllQuestions={showAllQuestions}
                 />
               )
             }
@@ -43,9 +44,11 @@ class CardContainer extends Component {
                   concept={concept}
                   updateStudyList={updateStudyList}
                   updateGuessedCards={updateGuessedCards}
+                  showAllQuestions={showAllQuestions}
                 />
               )
             }
+
           })}
         </div>
       )
