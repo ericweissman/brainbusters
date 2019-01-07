@@ -24,7 +24,7 @@ class QuestionCard extends Component {
         answered_correctly: false,
         incorrect_answer: guess
       })
-      this.props.updateStudyList(id)
+      // this.props.updateStudyList(id)
     }
   }
 
@@ -45,6 +45,7 @@ class QuestionCard extends Component {
         </div>
       )
     } else if (this.state.answered_correctly) {
+      console.log('correct works')
       return (
         <CorrectCard 
           question={this.props.question}
@@ -54,6 +55,7 @@ class QuestionCard extends Component {
         />
       )
     } else {
+      console.log('fires')
       return (
         <IncorrectCard 
           question={this.props.question}
@@ -61,6 +63,7 @@ class QuestionCard extends Component {
           incorrect_answer={this.state.incorrect_answer}
           id={this.props.id}
           updateGuessedCards={this.props.updateGuessedCards}
+          updateStudyList={this.props.updateStudyList}
         />
       )
     }

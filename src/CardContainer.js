@@ -4,13 +4,13 @@ import './styles/Main.scss'
 
 class CardContainer extends Component {
   render() {
-    let { questions, updateStudyList, studyList, showStudyList, updateGuessedCards, guessedQuestions } = this.props 
-    if (!showStudyList) {
+    let { questions, updateStudyList, studyList, showAllQuestions, updateGuessedCards, guessedQuestions } = this.props
+    if (!showAllQuestions && studyList.length > 0) {
       return (
         <div className="card-container">
           {questions.map((element) => {
             let { id, question, answers, correct_answer, concept } = element;
-            if (!guessedQuestions.includes(element.id)) {
+            if (studyList.includes(element.id)) {
               return (
                 <QuestionCard
                   key={id}
@@ -32,18 +32,20 @@ class CardContainer extends Component {
         <div className="card-container">
           {questions.map((element) => {
             let { id, question, answers, correct_answer, concept } = element;
-            if(!studyList.includes(element.id))
-            return (
-              <QuestionCard
-                key={id}
-                id={id}
-                question={question}
-                answers={answers}
-                correct_answer={correct_answer}
-                concept={concept}
-                updateStudyList={updateStudyList}
-              />
-            )
+            if (!studyList.includes(element.id) && !guessedQuestions.includes(element.id)) {
+              return (
+                <QuestionCard
+                  key={id}
+                  id={id}
+                  question={question}
+                  answers={answers}
+                  correct_answer={correct_answer}
+                  concept={concept}
+                  updateStudyList={updateStudyList}
+                  updateGuessedCards={updateGuessedCards}
+                />
+              )
+            }
           })}
         </div>
       )
@@ -53,23 +55,5 @@ class CardContainer extends Component {
 
 export default CardContainer;
 
-//For showing one card
-    // render() {
-    //   let { currentQuestion, updateStudyList, studyList, showStudyList, updateQuestionIndex } = this.props
-    //   return (
-    //     <div className="card-container">
-    //       <button className="down" onClick={updateQuestionIndex}></button>
-    //       <QuestionCard
-    //         key={currentQuestion.id}
-    //         id={currentQuestion.id}
-    //         question={currentQuestion.question}
-    //         answers={currentQuestion.answers}
-    //         correct_answer={currentQuestion.correct_answer}
-    //         concept={currentQuestion.concept}
-    //         updateStudyList={updateStudyList}
-    //       />
-    //       <button className="up" onClick={updateQuestionIndex}></button>
-    //     </div>
-    //   )
-    // }
+
       
