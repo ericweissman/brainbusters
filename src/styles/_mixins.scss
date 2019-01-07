@@ -58,7 +58,7 @@
 
 
 @mixin instructions-button {
-    background-color: $pink;
+    background-color: $white;
     border: 1px solid $dark;
     border-radius: 10px;
     padding: 5px;
@@ -67,7 +67,7 @@
     font-size: 20px;
     font-weight: 600;
     font-family: $title;
-    color: $blue;
+    color: $dark;
 
     &:hover {
         background: $grad2;
