@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Instructions should match snapshot when all data is passed correctly 1`] = `
+<div
+  className="instructions"
+>
+  <h5>
+    How It Works
+  </h5>
+  <div>
+    <p>
+      Each card is a multiple choice question. Click on the answer you think is correct!
+    </p>
+    <p>
+      If you get the answer incorrect, it will be added to your Study List to continue practicing.
+    </p>
+    <p>
+      If you want to view the questions you missed, choose Study List Only from the dropdown!
+    </p>
+  </div>
+  <button>
+    Got it!
+  </button>
+</div>
+`;

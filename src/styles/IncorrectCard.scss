@@ -1,0 +1,42 @@
+.incorrect-card {
+  width: 500px;
+  border-radius: 15px;
+  border: 2px solid $dark;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark;
+  color: whitesmoke;
+
+  h4 {
+    font-family: $title;
+    color: $red;
+    font-size: 40px;
+    margin: 5px auto;
+  }
+  
+  p {
+    width: 285px;
+    text-align: center;
+    font-family: $text;
+    font-weight: 800;
+    margin: 5px auto;
+  }
+
+  img {
+    height: 175px;
+    border: 2px solid $red;
+    border-radius: 5px;
+  }
+
+  button {
+    @include incorrect-card-button;
+  }
+}
+
+  .incorrect-answer {
+    color: $red;
+    font-weight: 800;
+    font-size: 25px;
+  }

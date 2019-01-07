@@ -1,0 +1,59 @@
+header {
+  color: #12c2e9;
+  background: $dark;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  min-height: 125px;
+ 
+
+  h1 {
+    animation: color-change 12s infinite;
+    padding-left: 50px;
+    font-family: $title;
+    font-size: 50px;
+  }
+
+  select {
+    width: 248px;
+    height: 30px;
+    font-family: 'Raleway';
+    font-size: 15px;
+    outline: none;
+    text-align: center;
+  }
+}
+
+.toggle-instructions-btn {
+  @include instructions-button;
+}
+
+.user-controls {
+  display: flex;
+  flex-direction: column;
+  padding-right: 60px;
+  align-items: center;
+}
+
+.fas {
+  color: $grad2
+}
+
+@keyframes color-change {
+  0% {
+    color: #ef32d9;
+    transform: scale(1);
+  }
+
+
+  50% {
+    color: #00dbde;
+    transform: scale(1.08);
+  }
+
+  100% {
+    color: #ef32d9;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,27 @@
+.question-card {
+  width: 500px;
+  border-radius: 15px;
+  border: 2px solid $dark;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark;
+  color: $white;
+  
+  p {
+    text-align: center;
+    font-family: $text;
+    font-weight: 800;
+    padding: 10px;
+  }
+
+  button {
+    @include card-button;
+  }
+}
+
+.answer-btns {
+  display: flex;
+}
+

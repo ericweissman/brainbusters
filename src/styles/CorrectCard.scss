@@ -1,0 +1,41 @@
+.correct-card {
+  width: 500px;
+  border-radius: 15px;
+  border: 2px solid $dark;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark;
+  color: whitesmoke;
+
+  h4 {
+    font-family: $title;
+    color: $green;
+    font-size: 40px;
+    margin: 5px auto;
+  }
+  
+  p {
+    text-align: center;
+    font-family: $text;
+    font-weight: 800;
+    margin: 5px auto;
+  }
+
+  img {
+    height: 175px;
+    border: 2px solid $green;
+    border-radius: 5px;
+  }
+
+  button {
+    @include correct-card-button;
+  }
+
+  .correct-answer {
+    color: $green;
+    font-weight: 800;
+    font-size: 25px;
+  }
+}
