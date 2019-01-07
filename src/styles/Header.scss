@@ -14,6 +14,15 @@ header {
     font-family: $title;
     font-size: 50px;
   }
+
+  select {
+    width: 248px;
+    height: 30px;
+    font-family: 'Raleway';
+    font-size: 15px;
+    outline: none;
+    text-align: center;
+  }
 }
 
 .toggle-instructions-btn {
@@ -23,8 +32,7 @@ header {
 .user-controls {
   display: flex;
   flex-direction: column;
-  width: 400px;
-  padding-right: 50px;
+  padding-right: 60px;
   align-items: center;
 }
 
