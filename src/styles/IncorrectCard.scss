@@ -1,4 +1,4 @@
-.correct-card {
+.incorrect-card {
   width: 500px;
   border-radius: 15px;
   border: 2px solid $dark;
@@ -11,7 +11,7 @@
 
   h4 {
     font-family: $title;
-    color: $green;
+    color: $red;
     font-size: 40px;
     margin: 5px auto;
   }
@@ -26,7 +26,7 @@
 
   img {
     height: 175px;
-    border: 2px solid $green;
+    border: 2px solid $red;
     border-radius: 5px;
   }
 
@@ -44,8 +44,8 @@
   }
 }
 
-  .correct-answer {
-    color: $green;
+  .incorrect-answer {
+    color: $red;
     font-weight: 800;
     font-size: 25px;
   }
