@@ -51,15 +51,14 @@ class App extends Component {
   }
 
   updateStudyList = (id) => {
-    const questions = [...this.state.questions]
+    const questions = [...this.state.questions];
     const studyList = [...this.state.studyList];
-    const missedQuestions = questions.filter((question) => {
-      return question.id === id && !studyList.includes(question)
+    const missedQuestions = questions.find((question) => {
+      return question.id === id
     })
-    if (!studyList.includes(missedQuestions)) {
-      studyList.push(...missedQuestions)
+    if (!studyList.includes(missedQuestions.id)) {
+      studyList.push(missedQuestions.id)
     }
-    
     this.setState({
       studyList: studyList
     })
