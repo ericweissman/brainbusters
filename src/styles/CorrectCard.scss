@@ -17,7 +17,6 @@
   }
   
   p {
-    width: 285px;
     text-align: center;
     font-family: $text;
     font-weight: 800;
@@ -31,21 +30,12 @@
   }
 
   button {
-    background-color: $white;
-    border-radius: 15px;
-    padding: 5px;
-    width: 100px;
-    margin: 10px;
-    &:hover {
-        background: linear-gradient(to right, #E100FF, #7F00FF);
-        color: $white;
-        cursor: pointer;
-    }
+    @include correct-card-button;
   }
-}
 
   .correct-answer {
     color: $green;
     font-weight: 800;
     font-size: 25px;
   }
+}

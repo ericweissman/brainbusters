@@ -1,0 +1,58 @@
+@mixin card-button {
+    background-color: $white;
+    border-radius: 15px;
+    padding: 5px;
+    width: 140px;
+    margin: 15px 10px;
+    font-size: 15px;
+
+    &:hover {
+        background: $grad2;
+        animation: grow 1.2s linear infinite;
+        color: $white;
+        font-weight: 800;
+        border: 1px solid $dark;
+        cursor: pointer;
+    }
+
+    @keyframes grow {
+      50% {
+        transform: translateY(-5px)
+      }
+    }
+}
+
+@mixin correct-card-button {
+    background-color: $white;
+    border-radius: 15px;
+    padding: 5px;
+    width: 140px;
+    margin: 15px 10px;
+    font-size: 15px;
+
+    &:hover {
+        background: $green;
+        color: $white;
+        font-weight: 800;
+        border: 1px solid $dark;
+        cursor: pointer;
+    }
+}
+
+@mixin incorrect-card-button {
+    background-color: $white;
+    border-radius: 15px;
+    padding: 5px;
+    width: 140px;
+    margin: 15px 10px;
+    font-size: 15px;
+
+    &:hover {
+        background: $red;
+        color: $white;
+        font-weight: 800;
+        border: 1px solid $dark;
+        cursor: pointer;
+    }
+
+}

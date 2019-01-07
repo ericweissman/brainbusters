@@ -10,28 +10,18 @@
   color: $white;
   
   p {
-    width: 285px;
     text-align: center;
     font-family: $text;
     font-weight: 800;
+    padding: 10px;
   }
 
   button {
-    background-color: whitesmoke;
-    border-radius: 15px;
-    padding: 5px;
-    width: 100px;
-    margin: 10px;
-    &:hover {
-        background: linear-gradient(to right, #E100FF, #7F00FF);
-        color: $white;
-        cursor: pointer;
-    }
+    @include card-button;
   }
 }
 
 .answer-btns {
   display: flex;
-  flex-direction: column;
 }
 

@@ -31,16 +31,7 @@
   }
 
   button {
-    background-color: $white;
-    border-radius: 15px;
-    padding: 5px;
-    width: 100px;
-    margin: 10px;
-    &:hover {
-        background: linear-gradient(to right, #E100FF, #7F00FF);
-        color: $white;
-        cursor: pointer;
-    }
+    @include incorrect-card-button;
   }
 }
 
