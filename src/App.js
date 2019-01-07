@@ -12,7 +12,6 @@ class App extends Component {
       studyList: [],
       showStudyList: false,
       guessedQuestions: [],
-      questionIndex: 0
     }
   }
   componentDidMount() {
@@ -30,21 +29,6 @@ class App extends Component {
       this.populateStudyList()
     }
 
-  updateQuestionIndex = (event) => {
-    let currentIndex = this.state.questionIndex
-    console.log(event.target.innerText)
-    if (event.target.className === 'down') {
-      console.log(event.target.innerText)
-      this.setState({
-        questionIndex: currentIndex - 1
-      })
-    } else if (event.target.className === 'up') {
-      this.setState({
-        questionIndex: currentIndex + 1
-      })
-    }
-  }
-
   populateStudyList = () => {
     if (Object.keys(localStorage).length > 0) {
       const savedStudyList = JSON.parse(localStorage.getItem('StudyList'))
@@ -54,10 +38,16 @@ class App extends Component {
     }
   }
 
-  toggleCardsToShow = () => {
-    this.setState({
-      showStudyList: !this.state.showStudyList
-    })
+  toggleCardsToShow = (event) => {
+    if (event.target.value === 'show-studylist') {
+      this.setState({
+        showStudyList: true
+      })
+    } else {
+      this.setState({
+        showStudyList: false
+      })
+    }
   }
 
   updateStudyList = (id) => {
@@ -66,13 +56,14 @@ class App extends Component {
     const missedQuestions = questions.filter((question) => {
       return question.id === id && !studyList.includes(question)
     })
-
-    studyList.push(...missedQuestions)
-    localStorage.setItem('StudyList', JSON.stringify(studyList))
-
+    if (!studyList.includes(missedQuestions)) {
+      studyList.push(...missedQuestions)
+    }
+    
     this.setState({
       studyList: studyList
     })
+    localStorage.setItem('StudyList', JSON.stringify(studyList))
   }
 
   updateGuessedCards = (id) => {
@@ -82,14 +73,12 @@ class App extends Component {
       return elem.id === id && !guessedArr.includes(elem)
     })
     guessedArr.push(...guessed)
-    
     this.setState({
       guessedQuestions: guessedArr
     })
 
   }
 
-  
   render() {
       let index = this.state.questionIndex
       let currentQuestion = this.state.questions[index];
@@ -99,15 +88,12 @@ class App extends Component {
             toggle={this.toggleCardsToShow}
           />
           {
-            this.state.questions.length > 0 &&
              <CardContainer
               currentQuestion={currentQuestion}
               questions={this.state.questions}
               updateStudyList={this.updateStudyList}
               studyList={this.state.studyList}
-              showStudyList={this.state.showStudyList}
               updateGuessedCards={this.updateGuessedCards}
-              updateQuestionIndex={this.updateQuestionIndex}
               guessedQuestions={this.state.guessedQuestions}
             />
           }
