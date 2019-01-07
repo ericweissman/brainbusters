@@ -5,32 +5,42 @@ exports[`Header should match snapshot when all data is passed correctly 1`] = `
   className="header"
 >
   <h1>
+    <span>
+      Brain
+    </span>
     <i
       className="fas fa-brain"
     />
-    Brainbusters
+    <span>
+      Buster
+    </span>
   </h1>
-  <div>
+  <div
+    className="user-controls"
+  >
     <button
       className="toggle-instructions-btn"
       onClick={[Function]}
     >
-      Instructions
+      Show Instructions
     </button>
-    <div>
-      <select>
-        <option
-          value="show-all"
-        >
-          Show All Questions
-        </option>
-        <option
-          value="show-studylist"
-        >
-          Study List Only
-        </option>
-      </select>
-    </div>
+    <select>
+      <option
+        value="default"
+      >
+        Choose Questions
+      </option>
+      <option
+        value="show-all"
+      >
+        Show All Questions
+      </option>
+      <option
+        value="show-studylist"
+      >
+        Study List Only
+      </option>
+    </select>
   </div>
 </header>
 `;

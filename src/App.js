@@ -68,10 +68,12 @@ class App extends Component {
   updateGuessedCards = (id) => {
     const questionsArr = [...this.state.questions];
     const guessedArr = [...this.state.guessedQuestions];
-    const guessed = questionsArr.filter((elem) => {
-      return elem.id === id && !guessedArr.includes(elem)
+    const guessed = questionsArr.find((elem) => {
+      return elem.id === id
     })
-    guessedArr.push(...guessed)
+    if (!guessedArr.includes(guessed.id)) {
+      guessedArr.push(guessed.id)
+    }
     this.setState({
       guessedQuestions: guessedArr
     })

@@ -10,7 +10,7 @@ class CardContainer extends Component {
         <div className="card-container">
           {questions.map((element) => {
             let { id, question, answers, correct_answer, concept } = element;
-            if (!guessedQuestions.includes(element)) {
+            if (!guessedQuestions.includes(element.id)) {
               return (
                 <QuestionCard
                   key={id}
@@ -32,7 +32,7 @@ class CardContainer extends Component {
         <div className="card-container">
           {questions.map((element) => {
             let { id, question, answers, correct_answer, concept } = element;
-            if(studyList.includes(element.id))
+            if(!studyList.includes(element.id))
             return (
               <QuestionCard
                 key={id}

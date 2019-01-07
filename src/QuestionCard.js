@@ -44,7 +44,7 @@ class QuestionCard extends Component {
           </div>
         </div>
       )
-    } if (this.state.answered_correctly) {
+    } else if (this.state.answered_correctly) {
       return (
         <CorrectCard 
           question={this.props.question}
