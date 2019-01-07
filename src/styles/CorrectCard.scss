@@ -1,4 +1,4 @@
-.question-card {
+.correct-card {
   width: 500px;
   border-radius: 15px;
   border: 2px solid $dark;
@@ -7,17 +7,24 @@
   flex-direction: column;
   align-items: center;
   background-color: $dark;
-  color: $white;
+  color: whitesmoke;
+
+  h4 {
+    font-family: $title;
+    font-size: 40px;
+    margin: 5px auto;
+  }
   
   p {
     width: 285px;
     text-align: center;
     font-family: $text;
     font-weight: 800;
+    margin: 5px auto;
   }
 
   button {
-    background-color: whitesmoke;
+    background-color: $white;
     border-radius: 15px;
     padding: 5px;
     width: 100px;
@@ -30,8 +37,8 @@
   }
 }
 
-.answer-btns {
-  display: flex;
-  flex-direction: column;
-}
-
+  .correct-answer {
+    color: $green;
+    font-weight: 800;
+    font-size: 25px;
+  }

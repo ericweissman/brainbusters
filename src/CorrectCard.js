@@ -8,7 +8,7 @@ class CorrectCard extends Component {
       <div className="correct-card">
         <h4>Correct!</h4>
         <p>{this.props.question}</p>
-        <p>{this.props.correct_answer}</p>
+        <p className="correct-answer">{this.props.correct_answer}</p>
         <button onClick={() => this.props.updateGuessedCards(this.props.id)}>Back to Quiz</button>      
       </div>
     )

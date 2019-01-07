@@ -11,7 +11,7 @@ header {
   h1 {
     animation: color-change 12s infinite;
     padding-left: 50px;
-    font-family: 'Fascinate';
+    font-family: $title;
     font-size: 45px;
   }
 }
