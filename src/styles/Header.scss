@@ -12,19 +12,22 @@ header {
     animation: color-change 12s infinite;
     padding-left: 50px;
     font-family: $title;
-    font-size: 45px;
+    font-size: 50px;
   }
+}
+
+.toggle-instructions-btn {
+  @include instructions-button;
 }
 
 .user-controls {
   display: flex;
   flex-direction: column;
   width: 400px;
+  padding-right: 50px;
+  align-items: center;
 }
 
-.instructions-shown {
-  background-color: rebeccapurple;
-}
 
 .fas {
   color: $grad2

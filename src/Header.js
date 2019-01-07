@@ -40,11 +40,10 @@ class Header extends Component {
     } else {
       return (
         <header className="header">
-          <h1><i className="fas fa-brain" />Brainbusters</h1>
-          <div className="instructions-shown">
-            <Instructions />
-            <button className="toggle-instructions-btn" onClick={this.toggleInstructionsShown}>Got it!</button>
-          </div>
+          <h1><span>Brain</span><i className="fas fa-brain" /><span>Buster</span></h1>
+            <Instructions 
+              toggleInstructions={this.toggleInstructionsShown}
+            />
         </header>
       )
     }
