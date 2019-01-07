@@ -11,6 +11,7 @@ class App extends Component {
       questions: [],
       studyList: [],
       showStudyList: false,
+      showAllQuestions: false,
       guessedQuestions: [],
     }
   }
@@ -38,16 +39,10 @@ class App extends Component {
     }
   }
 
-  toggleStudyList = (event) => {
-    if (event.target.value === 'show-studylist') {
-      this.setState({
-        showStudyList: true
-      })
-    } else {
-      this.setState({
-        showStudyList: false
-      })
-    }
+  toggleAllQuestions = () => {
+    this.setState({
+      showAllQuestions: !this.state.showAllQuestions
+    })
   }
 
   updateStudyList = (id) => {
@@ -58,11 +53,17 @@ class App extends Component {
     })
     if (!studyList.includes(missedQuestions.id)) {
       studyList.push(missedQuestions.id)
+    } else if (studyList.includes(missedQuestions.id)) {
+      alert('hi')
     }
     this.setState({
       studyList: studyList
+    }, () => {
+      localStorage.setItem('StudyList', JSON.stringify(studyList))
+      this.updateGuessedCards(id);
     })
-    localStorage.setItem('StudyList', JSON.stringify(studyList))
+
+    
   }
 
   updateGuessedCards = (id) => {
@@ -84,13 +85,13 @@ class App extends Component {
       return (
         <div className="App">
           <Header
-            toggle={this.toggleStudyList}
+            toggle={this.toggleAllQuestions}
           />
           <CardContainer
             questions={this.state.questions}
             updateStudyList={this.updateStudyList}
             studyList={this.state.studyList}
-            showStudyList={this.state.showStudyList}
+            showAllQuestions={this.state.showAllQuestions}
             updateGuessedCards={this.updateGuessedCards}
             guessedQuestions={this.state.guessedQuestions}
           />

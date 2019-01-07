@@ -3,7 +3,6 @@ import './styles/Main.scss';
 
 class CorrectCard extends Component {
   render() {
-    console.log(this.props.id)
     return(
       <div className="correct-card">
         <h4>Correct!</h4>

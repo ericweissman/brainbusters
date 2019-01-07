@@ -12,7 +12,7 @@ class QuestionCard extends Component {
   }
 
   evaluateGuess = (event) => {
-    const { id, correct_answer } = this.props
+    const {correct_answer } = this.props
     let guess = event.target.innerText;
     
     if (guess === correct_answer) {
@@ -24,8 +24,13 @@ class QuestionCard extends Component {
         answered_correctly: false,
         incorrect_answer: guess
       })
-      this.props.updateStudyList(id)
     }
+  }
+
+  resetAnswered = () => {
+    this.setState({
+      answered_correctly: null
+    })
   }
 
   render() {
@@ -51,6 +56,7 @@ class QuestionCard extends Component {
           correct_answer={this.props.correct_answer}
           id={this.props.id}
           updateGuessedCards={this.props.updateGuessedCards}
+          showAllCards={this.props.showAllQuestions}
         />
       )
     } else {
@@ -61,6 +67,9 @@ class QuestionCard extends Component {
           incorrect_answer={this.state.incorrect_answer}
           id={this.props.id}
           updateGuessedCards={this.props.updateGuessedCards}
+          updateStudyList={this.props.updateStudyList}
+          showAllCards={this.props.showAllQuestions}
+          reset={this.resetAnswered}
         />
       )
     }
