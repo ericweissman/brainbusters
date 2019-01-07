@@ -6,6 +6,7 @@ class CardContainer extends Component {
   render() {
     let { questions, updateStudyList, studyList, showStudyList, updateGuessedCards, guessedQuestions } = this.props 
     if (!showStudyList) {
+      console.log('is false', showStudyList)
       return (
         <div className="card-container">
           {questions.map((element) => {
@@ -28,6 +29,7 @@ class CardContainer extends Component {
         </div>
       )
     } else {
+      console.log('is true?', showStudyList)
       return (
         <div className="card-container">
           {studyList.map((element) => {

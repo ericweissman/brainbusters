@@ -38,7 +38,7 @@ class App extends Component {
     }
   }
 
-  toggleCardsToShow = (event) => {
+  toggleStudyList = (event) => {
     if (event.target.value === 'show-studylist') {
       this.setState({
         showStudyList: true
@@ -80,23 +80,19 @@ class App extends Component {
   }
 
   render() {
-      let index = this.state.questionIndex
-      let currentQuestion = this.state.questions[index];
       return (
         <div className="App">
           <Header
-            toggle={this.toggleCardsToShow}
+            toggle={this.toggleStudyList}
           />
-          {
-             <CardContainer
-              currentQuestion={currentQuestion}
-              questions={this.state.questions}
-              updateStudyList={this.updateStudyList}
-              studyList={this.state.studyList}
-              updateGuessedCards={this.updateGuessedCards}
-              guessedQuestions={this.state.guessedQuestions}
-            />
-          }
+          <CardContainer
+            questions={this.state.questions}
+            updateStudyList={this.updateStudyList}
+            studyList={this.state.studyList}
+            showStudyList={this.state.showStudyList}
+            updateGuessedCards={this.updateGuessedCards}
+            guessedQuestions={this.state.guessedQuestions}
+          />
         </div>
       );
     }
