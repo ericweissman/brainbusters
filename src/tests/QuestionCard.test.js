@@ -53,11 +53,11 @@ describe('QuestionCard', () => {
     expect(wrapper.state()).toEqual({answered_correctly: null, incorrect_answer: null})
   })
 
+  
   // it('should fire evaluateGuess when a guess button is clicked', () => {
   //   wrapper.find('guess-button').simulate('click');
   //   expect(evaluateGuessMock).toBeCalled();
   // });
-
   it('should reset state of answered_correctly to null if resetAnswered is called', () => {
     wrapper.setState({ answered_correctly: true, incorrect_answer: null });
     wrapper.instance().resetAnswered();

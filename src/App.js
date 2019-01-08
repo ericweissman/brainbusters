@@ -12,6 +12,7 @@ class App extends Component {
       studyList: [],
       showAllQuestions: false,
       guessedQuestions: [],
+      error: null
     }
   }
 
@@ -23,12 +24,10 @@ class App extends Component {
           questions: result.ewQuestions
         })
       })
-      .catch(err => {
-        this.setState({ error: err })
-      })
-
+      .catch((error) => {
+        this.setState({ error: true })
+      });
       this.populateStudyList();
-      console.log(this.state.studyList.length)
     }
 
 
@@ -91,30 +90,42 @@ class App extends Component {
     this.setState({
       studyList: [],
       guessedQuestions: [],
-    })
+      showAllQuestions: false
+    });
     localStorage.clear();
-    let studyList = this.state.studyList;
-    localStorage.setItem('StudyList', JSON.stringify(studyList))
+    // let studyList = this.state.studyList;
+    // localStorage.setItem('StudyList', JSON.stringify(studyList))
   }
 
   render() {
+    let {error} = this.state
       return (
         <div className="App">
-          <Header
-            toggle={this.toggleAllQuestions}
-            resetQuiz={this.resetQuiz}
-            studyList={this.state.studyList}
-            showAllQuestions={this.state.showAllQuestions}
-          />
-          <CardContainer
-            questions={this.state.questions}
-            updateStudyList={this.updateStudyList}
-            studyList={this.state.studyList}
-            showAllQuestions={this.state.showAllQuestions}
-            updateGuessedCards={this.updateGuessedCards}
-            guessedQuestions={this.state.guessedQuestions}
-
-          />
+        {!error ? (
+          <div>
+            <Header
+              toggle={this.toggleAllQuestions}
+              resetQuiz={this.resetQuiz}
+              studyList={this.state.studyList}
+              showAllQuestions={this.state.showAllQuestions}
+            />
+            <CardContainer
+              questions={this.state.questions}
+              updateStudyList={this.updateStudyList}
+              studyList={this.state.studyList}
+              showAllQuestions={this.state.showAllQuestions}
+              updateGuessedCards={this.updateGuessedCards}
+              guessedQuestions={this.state.guessedQuestions}
+            />
+          </div>
+        ) : (
+          <div className="error">
+            <h1>Error, huh? Well, see you later!</h1>
+            <img src="https://media.giphy.com/media/MACp8o4fXZfAA/giphy.gif"/>
+          </div>
+        )
+        }
+          
         </div>
       );
     }
