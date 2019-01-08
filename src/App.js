@@ -27,7 +27,8 @@ class App extends Component {
         this.setState({ error: err })
       })
 
-      this.populateStudyList()
+      this.populateStudyList();
+      console.log(this.state.studyList.length)
     }
 
 
@@ -91,6 +92,10 @@ class App extends Component {
       studyList: [],
       guessedQuestions: [],
     })
+    localStorage.clear();
+
+
+
     let studyList = this.state.studyList;
     console.log('before', localStorage)
     localStorage.setItem('StudyList', JSON.stringify(studyList))

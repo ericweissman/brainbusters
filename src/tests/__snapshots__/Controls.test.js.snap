@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls should match snapshot when all data is passed correctly 1`] = `
+<div
+  className="user-controls"
+>
+  <button
+    className="toggle-instructions-btn"
+  >
+    Show Instructions
+  </button>
+  <button>
+    Reset Study List
+  </button>
+  <button
+    className="cards-to-show"
+  >
+    Show All Questions
+  </button>
+</div>
+`;

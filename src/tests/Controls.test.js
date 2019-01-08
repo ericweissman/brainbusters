@@ -1,27 +1,20 @@
 import React from 'react';
-import Header from '../Header';
+import Controls from '../Controls';
 import setupTests from '../setupTests'
 import { shallow } from 'enzyme';
 
-
-describe('Header', () => {
+describe('Controls', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(
-      <Header 
-      />
+      <Controls />
     )
   })
+
   it('should match snapshot when all data is passed correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should have the proper default state', () => {
-    expect(wrapper.state()).toEqual({ showInstructions: false });
-  });
-
-
 
 })
-

@@ -12,35 +12,11 @@ exports[`Header should match snapshot when all data is passed correctly 1`] = `
       className="fas fa-brain"
     />
     <span>
-      Buster
+      Busters
     </span>
   </h1>
-  <div
-    className="user-controls"
-  >
-    <button
-      className="toggle-instructions-btn"
-      onClick={[Function]}
-    >
-      Show Instructions
-    </button>
-    <select>
-      <option
-        value="default"
-      >
-        Choose Questions
-      </option>
-      <option
-        value="show-all"
-      >
-        Show All Questions
-      </option>
-      <option
-        value="show-studylist"
-      >
-        Study List Only
-      </option>
-    </select>
-  </div>
+  <Controls
+    toggleInstructionsShown={[Function]}
+  />
 </header>
 `;
