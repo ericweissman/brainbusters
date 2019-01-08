@@ -8,7 +8,7 @@ class Controls extends Component {
         <div className="user-controls">
           <button className="toggle-instructions-btn" onClick={toggleInstructionsShown}>Show Instructions</button>
           <button onClick={resetQuiz}>Reset Study List</button>
-          <button className="cards-to-show" onClick={toggle}>Study List Empty</button>
+          <button disabled className="cards-to-show" onClick={toggle}>Study List Empty</button>
         </div>
       )
     } else if (showAllQuestions) {
