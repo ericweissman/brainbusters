@@ -11,7 +11,7 @@ class IncorrectCard extends Component {
           <p>{this.props.question}</p>
           <p>Correct Answer: {this.props.correct_answer}</p>
           <p className="incorrect-answer">Your Answer: {this.props.incorrect_answer}</p>
-          <button onClick={() => {
+          <button className="back-to-quiz-button" onClick={() => {
             this.props.updateGuessedCards(this.props.id);
             this.props.updateStudyList(this.props.id)
           }}>Back to Quiz</button>
@@ -25,7 +25,7 @@ class IncorrectCard extends Component {
         <p>{this.props.question}</p>
         <p>Correct Answer: {this.props.correct_answer}</p>
         <p className="incorrect-answer">Your Answer: {this.props.incorrect_answer}</p>
-        <button onClick={this.props.reset}>Back to Quiz</button>
+        <button className="back-to-quiz-button" onClick={this.props.reset}>Back to Quiz</button>
       </div>
       )
     }

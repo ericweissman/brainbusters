@@ -1,5 +1,5 @@
 import React from 'react';
-import CorrectCard from '../CorrectCard.js'
+import IncorrectCard from '../IncorrectCard.js'
 import setupTests from '../setupTests'
 import { shallow } from 'enzyme';
 
@@ -15,23 +15,27 @@ const question = {
   "concept": "prototypes"
 }
 const correct_answer = "Testing is my favorite hobby."
+const incorrect_answer = 'Daggob!'
 const id = 21
-const showAllCards = false
 const updateGuessedCardsMock = jest.fn()
 const updateStudyListMock = jest.fn()
+const showAllCards = true;
+const resetMock = jest.fn();
 
-describe('CorrectCard', () => {
+describe('IncorrectCard', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(
-      <CorrectCard 
-          question={question}
-          correct_answer={correct_answer}
-          id={id}
-          updateGuessedCards={updateGuessedCardsMock}
-          showAllCards={showAllCards}
-          updateStudyList={updateStudyListMock}
+      <IncorrectCard
+        question={question}
+        correct_answer={correct_answer}
+        incorrect_answer={incorrect_answer}
+        id={id}
+        updateGuessedCards={updateGuessedCardsMock}
+        showAllCards={showAllCards}
+        updateStudyList={updateStudyListMock}
+        reset={resetMock}
       />
     )
   });
@@ -40,13 +44,9 @@ describe('CorrectCard', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call updateStudyList when the back-to-quiz-btn is clicked', () => {
-    wrapper.find('.back-to-quiz-btn').simulate('click');
+  it('should call updateguessedcards and update study list on button click', () => {
+    wrapper.find('.back-to-quiz-button').simulate('click');
     expect(updateGuessedCardsMock).toBeCalled();
-  })
-
-  it('should fire update study list if showAllCards is false', () => {
-    wrapper.find('.back-to-quiz-btn').simulate('click');
     expect(updateStudyListMock).toBeCalled();
   })
 
