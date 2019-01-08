@@ -93,13 +93,8 @@ class App extends Component {
       guessedQuestions: [],
     })
     localStorage.clear();
-
-
-
     let studyList = this.state.studyList;
-    console.log('before', localStorage)
     localStorage.setItem('StudyList', JSON.stringify(studyList))
-    console.log('after', localStorage)
   }
 
   render() {

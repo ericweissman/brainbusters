@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../Header';
-import setupTests from '../setupTests'
 import { shallow } from 'enzyme';
 
 const toggleMock = jest.fn();

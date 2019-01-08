@@ -1,6 +1,5 @@
 import React from 'react';
 import Instructions from '../Instructions';
-import setupTests from '../setupTests'
 import { shallow } from 'enzyme';
 
 const toggleInstructionsMock = jest.fn()

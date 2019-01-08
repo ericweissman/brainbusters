@@ -1,6 +1,5 @@
 import React from 'react';
 import IncorrectCard from '../IncorrectCard.js'
-import setupTests from '../setupTests'
 import { shallow } from 'enzyme';
 
 const question = {
@@ -15,7 +14,7 @@ const question = {
   "concept": "prototypes"
 }
 const correct_answer = "Testing is my favorite hobby."
-const incorrect_answer = 'Daggob!'
+const incorrect_answer = "Daggob!"
 const id = 21
 const updateGuessedCardsMock = jest.fn()
 const updateStudyListMock = jest.fn()

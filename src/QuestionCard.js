@@ -12,7 +12,7 @@ class QuestionCard extends Component {
   }
 
   evaluateGuess = (event) => {
-    const {correct_answer } = this.props
+    const { correct_answer } = this.props
     let guess = event.target.innerText;
     
     if (guess === correct_answer) {
@@ -33,11 +33,6 @@ class QuestionCard extends Component {
     })
   }
 
-  resetCorrect = () => {
-    this.setState({
-      answered_correctly: true
-    })
-  }
 
   render() {
     if (this.state.answered_correctly === null) {
@@ -48,7 +43,7 @@ class QuestionCard extends Component {
             {
               this.props.answers.map((answer) => {
                 return (
-                  <button onClick={this.evaluateGuess} key={answer}>{answer}</button>
+                  <button className="guess-button" onClick={this.evaluateGuess} key={answer}>{answer}</button>
                 )
               })
             }

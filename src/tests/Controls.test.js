@@ -1,6 +1,5 @@
 import React from 'react';
 import Controls from '../Controls';
-import setupTests from '../setupTests'
 import { shallow } from 'enzyme';
 
 const studyList = [1, 2]

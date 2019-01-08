@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuestionCard should match snapshot when all data is passed correctly 1`] = `
+<div
+  className="question-card"
+  id={21}
+>
+  <p>
+    <Component />
+  </p>
+  <div
+    className="answer-btns"
+  >
+    <button
+      className="guess-button"
+      key="a"
+      onClick={[Function]}
+    >
+      a
+    </button>
+    <button
+      className="guess-button"
+      key="b"
+      onClick={[Function]}
+    >
+      b
+    </button>
+    <button
+      className="guess-button"
+      key="c"
+      onClick={[Function]}
+    >
+      c
+    </button>
+  </div>
+</div>
+`;
