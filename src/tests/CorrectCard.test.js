@@ -17,20 +17,20 @@ const question = {
 const correct_answer = "Testing is my favorite hobby."
 const id = 21
 const updateGuessedCardsMock = jest.fn()
-const showAllCardsMock = jest.fn()
 const updateStudyListMock = jest.fn()
 
 describe('CorrectCard', () => {
   let wrapper;
 
   beforeEach(() => {
+    let showCards = true;
     wrapper = shallow(
       <CorrectCard 
           question={question}
           correct_answer={correct_answer}
           id={id}
           updateGuessedCards={updateGuessedCardsMock}
-          showAllCards={showAllCardsMock}
+          showAllCards={showCards}
           updateStudyList={updateStudyListMock}
       />
     )
@@ -42,8 +42,13 @@ describe('CorrectCard', () => {
 
   it('should call updateStudyList when the back-to-quiz-btn is clicked', () => {
     wrapper.find('.back-to-quiz-btn').simulate('click');
-    expect(updateStudyListMock).toBeCalled();
+    expect(updateGuessedCardsMock).toBeCalled();
   })
 
+  it('should fire update study list if showAllCards is false', () => {
+    
+    wrapper.find('.back-to-quiz-btn').simulate('click');
+    expect(updateStudyListMock).toBeCalled();
+  })
 
 });

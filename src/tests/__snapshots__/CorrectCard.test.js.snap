@@ -8,6 +8,7 @@ exports[`CorrectCard should match snapshot when all data is passed correctly 1`]
     Correct!
   </h4>
   <img
+    alt="Correct!"
     src="https://media.giphy.com/media/PS7d4tm1Hq6Sk/giphy.gif"
   />
   <p>
