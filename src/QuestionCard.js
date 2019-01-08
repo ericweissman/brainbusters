@@ -33,6 +33,12 @@ class QuestionCard extends Component {
     })
   }
 
+  resetCorrect = () => {
+    this.setState({
+      answered_correctly: true
+    })
+  }
+
   render() {
     if (this.state.answered_correctly === null) {
       return (
@@ -57,6 +63,7 @@ class QuestionCard extends Component {
           id={this.props.id}
           updateGuessedCards={this.props.updateGuessedCards}
           showAllCards={this.props.showAllQuestions}
+          updateStudyList={this.props.updateStudyList}
         />
       )
     } else {

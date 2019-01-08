@@ -10,11 +10,11 @@ class App extends Component {
     this.state = {
       questions: [],
       studyList: [],
-      showStudyList: false,
       showAllQuestions: false,
       guessedQuestions: [],
     }
   }
+
   componentDidMount() {
     fetch("http://memoize-datasets.herokuapp.com/api/v1/ewQuestions")
       .then(results => results.json())
@@ -30,6 +30,8 @@ class App extends Component {
       this.populateStudyList()
     }
 
+
+
   populateStudyList = () => {
     if (Object.keys(localStorage).length > 0) {
       const savedStudyList = JSON.parse(localStorage.getItem('StudyList'))
@@ -41,20 +43,26 @@ class App extends Component {
 
   toggleAllQuestions = () => {
     this.setState({
-      showAllQuestions: !this.state.showAllQuestions
+      showAllQuestions: !this.state.showAllQuestions,
     })
   }
+
 
   updateStudyList = (id) => {
     const questions = [...this.state.questions];
     const studyList = [...this.state.studyList];
-    const missedQuestions = questions.find((question) => {
+    const missedQuestion = questions.find((question) => {
       return question.id === id
     })
-    if (!studyList.includes(missedQuestions.id)) {
-      studyList.push(missedQuestions.id)
-    } else if (studyList.includes(missedQuestions.id)) {
-      alert('hi')
+    if (!studyList.includes(missedQuestion.id)) {
+      studyList.push(missedQuestion.id)
+    } 
+    else if (studyList.includes(missedQuestion.id)) {
+      let index = studyList.indexOf(missedQuestion.id)
+      studyList.splice(index, 1)
+      this.setState({
+        studyList: studyList
+      })
     }
     this.setState({
       studyList: studyList
@@ -62,8 +70,6 @@ class App extends Component {
       localStorage.setItem('StudyList', JSON.stringify(studyList))
       this.updateGuessedCards(id);
     })
-
-    
   }
 
   updateGuessedCards = (id) => {
@@ -78,7 +84,17 @@ class App extends Component {
     this.setState({
       guessedQuestions: guessedArr
     })
+  }
 
+  resetQuiz = () => {
+    this.setState({
+      studyList: [],
+      guessedQuestions: [],
+    })
+    let studyList = this.state.studyList;
+    console.log('before', localStorage)
+    localStorage.setItem('StudyList', JSON.stringify(studyList))
+    console.log('after', localStorage)
   }
 
   render() {
@@ -86,6 +102,9 @@ class App extends Component {
         <div className="App">
           <Header
             toggle={this.toggleAllQuestions}
+            resetQuiz={this.resetQuiz}
+            studyList={this.state.studyList}
+            showAllQuestions={this.state.showAllQuestions}
           />
           <CardContainer
             questions={this.state.questions}
@@ -94,6 +113,7 @@ class App extends Component {
             showAllQuestions={this.state.showAllQuestions}
             updateGuessedCards={this.updateGuessedCards}
             guessedQuestions={this.state.guessedQuestions}
+
           />
         </div>
       );

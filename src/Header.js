@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import Instructions from './Instructions'
+import Instructions from './Instructions';
+import Controls from './Controls';
 import './styles/Main.scss'
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showInstructions: false
+      showInstructions: false,
     }
   }
 
@@ -17,31 +18,32 @@ class Header extends Component {
   }
 
   render() {
-    if (this.state.showInstructions === false) {
+    let { toggle, resetQuiz, studyList, showAllQuestions} = this.props
+    if (!this.state.showInstructions) {
       return (
         <header className="header">
           <h1><span>Brain</span><i className="fas fa-brain" /><span>Busters</span></h1>
-          <div className="user-controls">
-            <button className="toggle-instructions-btn"onClick={this.toggleInstructionsShown}>Show Instructions</button>
-              <select onChange={this.props.toggle}>
-                <option value="show-studylist">Study List Only</option>
-                <option value="show-all">Show All Questions</option>
-              </select>
-          </div>
+          <Controls
+            studyList={studyList}
+            showAllQuestions={showAllQuestions}
+            toggleInstructionsShown={this.toggleInstructionsShown}
+            resetQuiz={resetQuiz}
+            toggle={toggle}
+          />
         </header>
-      )
-    } else {
-      return (
-        <header className="header">
-          <h1><span>Brain</span><i className="fas fa-brain" /><span>Busters</span></h1>
-            <Instructions 
-              toggleInstructions={this.toggleInstructionsShown}
-            />
-        </header>
+        )
+      } else {
+        return (
+          <header className="header">
+            <h1><span>Brain</span><i className="fas fa-brain" /><span>Busters</span></h1>
+              <Instructions 
+                toggleInstructions={this.toggleInstructionsShown}
+              />
+          </header>
       )
     }
-    
   }
 }
+
 
 export default Header;
