@@ -1,13 +1,12 @@
 import React from 'react';
 import CardContainer from '../CardContainer';
-import mockData from '../MockData'
+import { questions } from '../MockData'
 import setupTests from '../setupTests'
 import { shallow } from 'enzyme';
 
+
 describe('CardContainer', () => {
   let wrapper;
-  let questions = mockData.questions
-
 
   beforeEach(() => {
     wrapper = shallow(

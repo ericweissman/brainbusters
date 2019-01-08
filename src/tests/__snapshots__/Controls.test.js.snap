@@ -6,16 +6,21 @@ exports[`Controls should match snapshot when all data is passed correctly 1`] = 
 >
   <button
     className="toggle-instructions-btn"
+    onClick={[MockFunction]}
   >
     Show Instructions
   </button>
-  <button>
+  <button
+    className="reset-quiz"
+    onClick={[MockFunction]}
+  >
     Reset Study List
   </button>
   <button
     className="cards-to-show"
+    onClick={[MockFunction]}
   >
-    Show All Questions
+    Show Study List
   </button>
 </div>
 `;

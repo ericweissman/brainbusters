@@ -10,7 +10,7 @@ class CorrectCard extends Component {
           <img src="https://media.giphy.com/media/PS7d4tm1Hq6Sk/giphy.gif" />
           <p>{this.props.question}</p>
           <p className="correct-answer">{this.props.correct_answer}</p>
-          <button onClick={() => this.props.updateGuessedCards(this.props.id)}>Back to Quiz</button>
+          <button className="back-to-quiz-btn"onClick={() => this.props.updateGuessedCards(this.props.id)}>Back to Quiz</button>
         </div>
       )
     } else {
@@ -20,7 +20,7 @@ class CorrectCard extends Component {
           <img src="https://media.giphy.com/media/PS7d4tm1Hq6Sk/giphy.gif" />
           <p>{this.props.question}</p>
           <p className="correct-answer">{this.props.correct_answer}</p>
-          <button onClick={() => this.props.updateStudyList(this.props.id)}>Back to Quiz</button>
+          <button className="back-to-quiz-btn" onClick={() => this.props.updateStudyList(this.props.id)}>Back to Quiz</button>
         </div>
       )
     }

@@ -3,16 +3,18 @@ import Instructions from '../Instructions';
 import setupTests from '../setupTests'
 import { shallow } from 'enzyme';
 
+const toggleInstructionsMock = jest.fn()
+
 describe('Instructions', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(
       <Instructions 
-        toggleInstructions={jest.fn()}
+        toggleInstructions={toggleInstructionsMock}
       />
     )
-  })
+  });
 
   it('should match snapshot when all data is passed correctly', () => {
     expect(wrapper).toMatchSnapshot();
@@ -20,7 +22,7 @@ describe('Instructions', () => {
 
   it('should call toggle instructions on click', () => {
     wrapper.find('button').simulate('click');
-    expect(wrapper('toggleInstructions')).toHaveBeenCalled(1)
-  })
+    expect(toggleInstructionsMock).toBeCalled()
+  });
 
 })

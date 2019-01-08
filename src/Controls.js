@@ -7,7 +7,7 @@ class Controls extends Component {
       return(
         <div className="user-controls">
           <button className="toggle-instructions-btn" onClick={toggleInstructionsShown}>Show Instructions</button>
-          <button onClick={resetQuiz}>Reset Study List</button>
+          <button className="reset-quiz" onClick={resetQuiz}>Reset Study List</button>
           <button disabled className="cards-to-show" onClick={toggle}>Study List Empty</button>
         </div>
       )
@@ -15,7 +15,7 @@ class Controls extends Component {
       return (
         <div className="user-controls">
           <button className="toggle-instructions-btn" onClick={toggleInstructionsShown}>Show Instructions</button>
-          <button onClick={resetQuiz}>Reset Study List</button>
+          <button className="reset-quiz" onClick={resetQuiz}>Reset Study List</button>
           <button className="cards-to-show" onClick={toggle}>Show Study List</button>
         </div>
       )
@@ -23,7 +23,7 @@ class Controls extends Component {
       return (
         <div className="user-controls">
           <button className="toggle-instructions-btn" onClick={toggleInstructionsShown}>Show Instructions</button>
-          <button onClick={resetQuiz}>Reset Study List</button>
+          <button className="reset-quiz" onClick={resetQuiz}>Reset Study List</button>
           <button className="cards-to-show" onClick={toggle}>Show All Questions</button>
         </div>
       )

@@ -16,6 +16,15 @@ exports[`Header should match snapshot when all data is passed correctly 1`] = `
     </span>
   </h1>
   <Controls
+    resetQuiz={[MockFunction]}
+    showAllQuestions={false}
+    studyList={
+      Array [
+        1,
+        2,
+      ]
+    }
+    toggle={[MockFunction]}
     toggleInstructionsShown={[Function]}
   />
 </header>
