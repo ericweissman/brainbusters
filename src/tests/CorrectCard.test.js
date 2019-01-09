@@ -39,15 +39,13 @@ describe('CorrectCard', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  // it('should call updateStudyList when the back-to-quiz-btn is clicked', () => {
-  //   wrapper.find('.back-to-quiz-btn').simulate('click');
-  //   expect(updateGuessedCardsMock).toBeCalled();
-  // })
+  it('should call updateStudyList when the back-to-quiz-btn is clicked', () => {
+    wrapper.find('.back-to-quiz-btn').simulate('click');
+    expect(updateGuessedCardsMock).toBeCalled();
+  });
 
   it('should fire update study list if showAllCards is false', () => {
     wrapper.find('.back-to-quiz-btn').simulate('click');
     expect(updateStudyListMock).toBeCalled();
   });
-
-
 });

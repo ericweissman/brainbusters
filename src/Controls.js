@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Controls extends Component {
   render() {
-    let {studyList, showAllQuestions, toggleInstructionsShown, resetQuiz, toggle } = this.props
+    let {showAllQuestions, toggleInstructionsShown, resetQuiz, toggle } = this.props
       return(
         <div className="user-controls">
           <button className="toggle-instructions-btn" onClick={toggleInstructionsShown}>Show Instructions</button>

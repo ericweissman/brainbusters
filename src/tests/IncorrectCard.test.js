@@ -47,6 +47,5 @@ describe('IncorrectCard', () => {
     wrapper.find('.back-to-quiz-button').simulate('click');
     expect(updateGuessedCardsMock).toBeCalled();
     expect(updateStudyListMock).toBeCalled();
-  })
-
+  });
 });

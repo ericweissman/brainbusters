@@ -27,7 +27,7 @@ class App extends Component {
         this.setState({ error: true })
       });
       this.populateStudyList();
-    }
+  }
 
 
   populateStudyList = () => {
@@ -35,14 +35,14 @@ class App extends Component {
       const savedStudyList = JSON.parse(localStorage.getItem('StudyList'))
       this.setState({
         studyList: savedStudyList
-      })
+      });
     }
   }
 
   toggleAllQuestions = () => {
     this.setState({
       showAllQuestions: !this.state.showAllQuestions,
-    })
+    });
   }
 
   updateStudyList = (id, answer) => {
@@ -114,11 +114,10 @@ class App extends Component {
         ) : (
           <div className="error">
             <h1>Error, huh? Well, see you later!</h1>
-            <img src="https://media.giphy.com/media/MACp8o4fXZfAA/giphy.gif"/>
+            <img src="https://media.giphy.com/media/MACp8o4fXZfAA/giphy.gif" alt="Big Gulps, huh?"/>
           </div>
         )
         }
-          
         </div>
       );
     }
