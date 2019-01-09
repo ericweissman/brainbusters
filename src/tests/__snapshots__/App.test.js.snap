@@ -4,7 +4,9 @@ exports[`App should match the snapshot with all data passed in correctly 1`] = `
 <div
   className="App"
 >
-  <div>
+  <div
+    className="app"
+  >
     <Header
       resetQuiz={[Function]}
       showAllQuestions={false}

@@ -41,5 +41,4 @@ describe('Controls', () => {
     wrapper.find('.cards-to-show').simulate('click');
     expect(toggleMock).toBeCalled();
   });
-
 })

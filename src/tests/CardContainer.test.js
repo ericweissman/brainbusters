@@ -1,6 +1,5 @@
 import React from 'react';
 import CardContainer from '../CardContainer';
-// import setupTests from '../setupTests'
 import { shallow } from 'enzyme';
 
 const questions = [
@@ -48,7 +47,7 @@ describe('CardContainer', () => {
         guessedQuestions={guessedQuestions}
       />
     )
-  })
+  });
 
   it('should match snapshot when all data is passed correctly', () => {
     expect(wrapper).toMatchSnapshot();

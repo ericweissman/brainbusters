@@ -3,34 +3,9 @@ import Header from '../Header';
 import { shallow } from 'enzyme';
 
 const toggleMock = jest.fn();
-const toggleInstructionsShownMock = jest.fn();
 const resetQuizMock = jest.fn();
 const studyList = [1, 2];
 const showAllQuestions = false;
-const questions = [
-  {
-    "id": 1,
-    "question": "What array prototype method would return a sum of the elements in an array?",
-    "answers": [
-      ".sort()",
-      ".reduce()",
-      ".forEach()"
-    ],
-    "correct_answer": ".reduce()",
-    "concept": "prototypes"
-  },
-  {
-    "id": 2,
-    "question": "Which prototype method returns the first element in an array?",
-    "answers": [
-      ".pop()",
-      ".shift()",
-      ".map()"
-    ],
-    "correct_answer": ".shift()",
-    "concept": "prototypes"
-  }
-];
 
 describe('Header', () => {
   let wrapper;
@@ -44,7 +19,8 @@ describe('Header', () => {
         showAllQuestions={showAllQuestions}
       />
     )
-  })
+  });
+
   it('should match snapshot when all data is passed correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
@@ -59,7 +35,6 @@ describe('Header', () => {
     expect(wrapper.state()).toEqual({ showInstructions: true });
     wrapper.instance().toggleInstructionsShown();
     expect(wrapper.state()).toEqual({ showInstructions: false });
-  })
-
-})
+  });
+});
 

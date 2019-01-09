@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import App from '../App';
 import { shallow, mount } from 'enzyme';
 
-
 const question = [
   {
     "id": 1,
@@ -18,21 +17,30 @@ const question = [
   }];
 const guessedQuestions = [];
 const id = 1;
-const studyList = [4, 6]
+const studyList = [4, 6];
 
 describe('App', () => {
   let wrapper;
 
   beforeEach(() => {
-    // localStorage.setItem('StudyList', '[4, 6]');
     wrapper = shallow(
       <App />
     );
 
   afterEach(() => {
     localStorage.clear();
-  })
+  });
 
+});
+
+  it('should have a default state', () => {
+    expect(wrapper.state()).toEqual({
+      questions: [],
+      studyList: [],
+      showAllQuestions: false,
+      guessedQuestions: [],
+      error: null
+    });
   });
 
   it('should retrieve data from local storage on mount', () => {
@@ -50,7 +58,6 @@ describe('App', () => {
   });
 
 
-
   it('should match the snapshot with all data passed in correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
@@ -58,18 +65,6 @@ describe('App', () => {
   it('should render the Header and CardContainer component', () => {
     expect(wrapper.find('Header').length).toEqual(1)
     expect(wrapper.find('CardContainer').length).toEqual(1)
-  });
-
-
-
-  it('should have a default state', () => {
-    expect(wrapper.state()).toEqual({
-      questions: [],
-      studyList: [],
-      showAllQuestions: false,
-      guessedQuestions: [],
-      error: null
-    })
   });
 
   it('should change state when toggleAllQuestions is called', () => {
@@ -94,7 +89,5 @@ describe('App', () => {
       showAllQuestions: false,
       guessedQuestions: []
     });
-  })
-
-  
+  });
 });
