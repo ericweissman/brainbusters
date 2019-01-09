@@ -1,5 +1,5 @@
 @mixin card-button {
-    background-color: $white;
+    background-color: $grad2;
     border-radius: 15px;
     padding: 5px;
     width: 140px;
@@ -7,7 +7,7 @@
     font-size: 15px;
 
     &:hover {
-        background: $grad2;
+        background: $grad;
         animation: grow 1.2s linear infinite;
         color: $dark;
         font-weight: 800;
@@ -23,7 +23,7 @@
 }
 
 @mixin correct-card-button {
-    background-color: $white;
+    background-color: $grad2;
     border-radius: 15px;
     padding: 5px;
     width: 140px;
@@ -31,7 +31,7 @@
     font-size: 15px;
 
     &:hover {
-        background: $green;
+        background: $green-grad;
         color: $white;
         font-weight: 800;
         border: 1px solid $dark;
@@ -40,7 +40,7 @@
 }
 
 @mixin incorrect-card-button {
-    background-color: $white;
+    background-color: $grad2;
     border-radius: 15px;
     padding: 5px;
     width: 140px;
@@ -48,7 +48,7 @@
     font-size: 15px;
 
     &:hover {
-        background: $red;
+        background: $red-grad;
         color: $white;
         font-weight: 800;
         border: 1px solid $dark;
@@ -58,7 +58,7 @@
 
 
 @mixin instructions-button {
-    background-color: $white;
+    background: $grad2;
     border: 1px solid $dark;
     border-radius: 10px;
     padding: 5px;
@@ -70,7 +70,7 @@
     color: $dark;
 
     &:hover {
-        background: $grad2;
+        background: $grad;
         color: $dark;
         font-weight: 800;
         border: 1px solid $dark;
@@ -82,13 +82,13 @@
     font-family: $title;
     border: 1px solid $dark;    
     border-radius: 10px;
-    color: $blue;
-    background-color: $pink;;
+    color: $dark;
+    background-color: $green;;
     font-size: 14px;
     cursor: pointer;
-
+    width: 100px;
       &:hover {
-        background: $grad2;
+        background: $grad;
         color: $dark;
         font-weight: 800;
         border: 1px solid $dark;
