@@ -1,5 +1,5 @@
 # BrainBusters
-#### A study app built using React that allows users to 
+#### A study app built using React that allows users to study front-end development concepts with an elegant, intuitive UI!
 
 ## Installation Steps
 - Clone the repo: ```git clone https://github.com/ericweissman/brainbusters.git```
