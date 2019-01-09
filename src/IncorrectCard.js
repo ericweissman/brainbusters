@@ -3,6 +3,7 @@ import './styles/Main.scss';
 
 class IncorrectCard extends Component {
   render() {
+    //show all cards
     if (this.props.showAllCards || (localStorage.getItem('StudyList') === null && !this.props.showAllCards))  {
       return (
         <div className="incorrect-card">
@@ -12,14 +13,15 @@ class IncorrectCard extends Component {
           <p>Correct Answer: {this.props.correct_answer}</p>
           <p className="incorrect-answer">Your Answer: {this.props.incorrect_answer}</p>
           <button className="back-to-quiz-button" onClick={() => {
-            this.props.reset()
             this.props.updateGuessedCards(this.props.id);
-            this.props.updateStudyList(this.props.id);
+            this.props.updateStudyList(this.props.id, this.props.answered_correctly);
+            // this.props.reset()
           }}>Back to Quiz</button>
         </div>
       )
     } else {
       return(
+        //studylist only
       <div className="incorrect-card">
         <h4>Wrong!</h4>
         <img src="https://media.giphy.com/media/BmshHM2V8ByjC/giphy.gif" />

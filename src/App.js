@@ -48,21 +48,28 @@ class App extends Component {
   }
 
 
-  updateStudyList = (id) => {
+  updateStudyList = (id, answer) => {
+    console.log(answer)
     const questions = [...this.state.questions];
     const studyList = [...this.state.studyList];
-    const missedQuestion = questions.find((question) => {
+    const guess = questions.find((question) => {
       return question.id === id
     })
-    if (!studyList.includes(missedQuestion.id)) {
-      studyList.push(missedQuestion.id)
-    } 
-    else if (studyList.includes(missedQuestion.id)) {
-      let index = studyList.indexOf(missedQuestion.id)
+    console.log('guess', guess.id)
+    //id is not in studylist, and answer is false
+    if (!studyList.includes(guess.id) && answer === false) {
+      console.log('fires')
+      studyList.push(guess.id)
+      console.log(studyList)
+    }
+    //when viewing study list, this removes it from the page if correct
+    else if (studyList.includes(guess.id) && !this.state.showAllQuestions) {
+      let index = studyList.indexOf(guess.id)
       studyList.splice(index, 1)
-      this.setState({
-        studyList: studyList
-      })
+      console.log('fires2')
+      // this.setState({
+      //   studyList: studyList
+      // })
     }
     this.setState({
       studyList: studyList
@@ -93,8 +100,6 @@ class App extends Component {
       showAllQuestions: false
     });
     localStorage.clear();
-    // let studyList = this.state.studyList;
-    // localStorage.setItem('StudyList', JSON.stringify(studyList))
   }
 
   render() {
