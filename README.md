@@ -19,8 +19,11 @@ Brainbusters is a study tool for front-end developers designed to refresh their 
 ## Screenshots & Wireframes
 
 
-<img width="769" alt="screen shot 2019-01-09 at 7 26 46 am" src="https://user-images.githubusercontent.com/20710327/50905532-47d11e80-13e0-11e9-8369-652e49b954ce.png">
-<img width="765" alt="screen shot 2019-01-09 at 7 26 55 am" src="https://user-images.githubusercontent.com/20710327/50905581-633c2980-13e0-11e9-9de6-896113afd1e6.png">
+##### Main/Home Screen
+<img width="760" alt="screen shot 2019-01-09 at 7 31 30 am" src="https://user-images.githubusercontent.com/20710327/50905723-b3b38700-13e0-11e9-9293-16db7ca69661.png">
+
+##### Correct/Incorrect Cards
+<img width="762" alt="screen shot 2019-01-09 at 7 31 46 am" src="https://user-images.githubusercontent.com/20710327/50905757-c4fc9380-13e0-11e9-89af-14137b20dcd0.png">
 
 ## Next Steps
 #### Future iterations of the project could include:
