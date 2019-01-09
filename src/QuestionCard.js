@@ -33,7 +33,6 @@ class QuestionCard extends Component {
     })
   }
 
-
   render() {
     if (this.state.answered_correctly === null) {
       return (

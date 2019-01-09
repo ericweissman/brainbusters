@@ -13,7 +13,9 @@ exports[`IncorrectCard should match snapshot when all data is passed correctly 1
   <p>
     <Component />
   </p>
-  <p>
+  <p
+    className="display-correct"
+  >
     Correct Answer: 
     Testing is my favorite hobby.
   </p>

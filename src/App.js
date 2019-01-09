@@ -6,7 +6,6 @@ import './styles/Main.scss';
 class App extends Component {
   constructor() {
     super();
-
     this.state = {
       questions: [],
       studyList: [],
@@ -31,7 +30,6 @@ class App extends Component {
     }
 
 
-
   populateStudyList = () => {
     if (Object.keys(localStorage).length > 0) {
       const savedStudyList = JSON.parse(localStorage.getItem('StudyList'))
@@ -47,29 +45,20 @@ class App extends Component {
     })
   }
 
-
   updateStudyList = (id, answer) => {
-    console.log('fire')
     const questions = [...this.state.questions];
     const studyList = [...this.state.studyList];
     const guess = questions.find((question) => {
       return question.id === id
     })
-    console.log(answer)
-    //id is not in studylist, and answer is false
+
     if (!studyList.includes(guess.id) && answer === false) {
-      console.log('fires')
       studyList.push(guess.id)
-      console.log(studyList)
-    }
-    //when viewing study list, this removes it from the page if correct
-    else if (studyList.includes(guess.id) && !this.state.showAllQuestions) {
+    } else if (studyList.includes(guess.id) && !this.state.showAllQuestions) {
       let index = studyList.indexOf(guess.id)
       studyList.splice(index, 1)
-      // this.setState({
-      //   studyList: studyList
-      // })
     }
+
     this.setState({
       studyList: studyList
     }, () => {
@@ -120,7 +109,6 @@ class App extends Component {
               showAllQuestions={this.state.showAllQuestions}
               updateGuessedCards={this.updateGuessedCards}
               guessedQuestions={this.state.guessedQuestions}
-              studyList={this.state.studyList}
             />
           </div>
         ) : (

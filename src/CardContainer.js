@@ -5,9 +5,7 @@ import './styles/Main.scss'
 class CardContainer extends Component {
   render() {
     let { questions, updateStudyList, studyList, showAllQuestions, updateGuessedCards, guessedQuestions } = this.props
-    if (!showAllQuestions && studyList.length > 0) {
-      //there is something in local storage and i want to load the cards i missed to start 
-
+    if (!showAllQuestions && studyList.length > 0 || showAllQuestions && studyList.length === 0) {
       return (
         <div className="card-container">
           {questions.map((element) => {
@@ -24,8 +22,7 @@ class CardContainer extends Component {
                 updateStudyList={updateStudyList}
                 updateGuessedCards={updateGuessedCards}
                 showAllQuestions={showAllQuestions}
-                studyList={this.props.studyList}
-
+                studyList={studyList}
                 />
                 )
               }
@@ -49,7 +46,7 @@ class CardContainer extends Component {
                   updateStudyList={updateStudyList}
                   updateGuessedCards={updateGuessedCards}
                   showAllQuestions={showAllQuestions}
-                  studyList={this.props.studyList}
+                  studyList={studyList}
                 />
               )
             }

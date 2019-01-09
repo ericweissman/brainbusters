@@ -3,19 +3,17 @@ import './styles/Main.scss';
 
 class IncorrectCard extends Component {
   render() {
-    //show all cards
     if (this.props.showAllCards)  {
       return (
         <div className="incorrect-card">
           <h4>Wrong!</h4>
           <img src="https://media.giphy.com/media/BmshHM2V8ByjC/giphy.gif" />
           <p>{this.props.question}</p>
-          <p>Correct Answer: {this.props.correct_answer}</p>
+          <p className="display-correct">Correct Answer: {this.props.correct_answer}</p>
           <p className="incorrect-answer">Your Answer: {this.props.incorrect_answer}</p>
           <button className="back-to-quiz-button" onClick={() => {
             this.props.updateStudyList(this.props.id, this.props.answered_correctly);
             this.props.updateGuessedCards(this.props.id);
-            // this.props.reset()
           }}>Back to Quiz</button>
         </div>
       )
@@ -25,23 +23,21 @@ class IncorrectCard extends Component {
           <h4>Wrong!</h4>
           <img src="https://media.giphy.com/media/BmshHM2V8ByjC/giphy.gif" />
           <p>{this.props.question}</p>
-          <p>Correct Answer: {this.props.correct_answer}</p>
+          <p className="display-correct">Correct Answer: {this.props.correct_answer}</p>
           <p className="incorrect-answer">Your Answer: {this.props.incorrect_answer}</p>
           <button className="back-to-quiz-button" onClick={() => {
             this.props.updateStudyList(this.props.id, this.props.answered_correctly);
             this.props.updateGuessedCards(this.props.id);
-            // this.props.reset()
-          }}>XXXXX</button>
+          }}>Add To Study List</button>
         </div>
       )
     } else {
       return(
-        //studylist only
       <div className="incorrect-card">
         <h4>Wrong!</h4>
         <img src="https://media.giphy.com/media/BmshHM2V8ByjC/giphy.gif" />
         <p>{this.props.question}</p>
-        <p>Correct Answer: {this.props.correct_answer}</p>
+        <p className="display-correct">Correct Answer: {this.props.correct_answer}</p>
         <p className="incorrect-answer">Your Answer: {this.props.incorrect_answer}</p>
         <button className="back-to-quiz-button" onClick={this.props.reset}>Back to Quiz</button>
       </div>
