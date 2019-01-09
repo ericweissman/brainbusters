@@ -39,3 +39,12 @@
     font-size: 25px;
   }
 }
+
+  @media screen and (max-width: 535px) {
+    .correct-card {
+      width: 300px;
+        img {
+          height: 125px;
+          }
+    }
+  }

@@ -62,3 +62,48 @@ header {
     transform: scale(1);
   }
 }
+
+@media screen and (max-width: 1000px) {
+  header {
+    flex-direction: column;
+
+    h1 {
+      padding: 0;
+    }
+  }
+  .user-controls {
+    padding: 0;
+      button {
+          margin: 5px 0;
+          font-size: 15px;
+          font-family: 'Raleway';
+          width: 155px;
+      }
+    padding-bottom: 20px;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+    header {
+      h1 {
+      font-size: 35px;
+    }
+  }
+    .user-controls {
+      padding-bottom: 10px;
+        button {
+            font-size: 12px;
+            width: 135px;
+       }
+  }
+}
+  
+
+@media screen and (max-width: 375px) {
+    header {
+      h1 {
+      font-size: 30px;
+    }
+  }
+}
