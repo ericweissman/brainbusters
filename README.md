@@ -17,7 +17,7 @@ Brainbusters is a study tool for front-end developers designed to refresh their 
 - Enzyme
 
 ## Screenshots & Wireframes
-
+![screencast-localhost-3001-2019 01 09-08-14-36](https://user-images.githubusercontent.com/20710327/50908385-d779cb80-13e6-11e9-879f-526ae0e9c8fa.gif)
 
 ##### Main/Home Screen
 <img width="760" alt="screen shot 2019-01-09 at 7 31 30 am" src="https://user-images.githubusercontent.com/20710327/50905723-b3b38700-13e0-11e9-9293-16db7ca69661.png">
