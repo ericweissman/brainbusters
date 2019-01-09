@@ -63,12 +63,21 @@ header {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  .user-controls {
+    button {
+      margin: 5px;
+    }
+  }
+}
+
 @media screen and (max-width: 1000px) {
   header {
     flex-direction: column;
 
     h1 {
       padding: 0;
+      margin: 10px;
     }
   }
   .user-controls {
@@ -76,7 +85,6 @@ header {
       button {
           margin: 5px 0;
           font-size: 15px;
-          font-family: 'Raleway';
           width: 155px;
       }
     padding-bottom: 20px;
@@ -87,7 +95,7 @@ header {
 @media screen and (max-width: 500px) {
     header {
       h1 {
-      font-size: 35px;
+      font-size: 38px;
     }
   }
     .user-controls {
@@ -103,7 +111,8 @@ header {
 @media screen and (max-width: 375px) {
     header {
       h1 {
-      font-size: 38px;
+      font-size: 33px;
+      margin: 5px;
     }
   }
 }
