@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls should match snapshot when all data is passed correctly 1`] = `
+<div
+  className="user-controls"
+>
+  <button
+    className="toggle-instructions-btn"
+    onClick={[MockFunction]}
+  >
+    Show Instructions
+  </button>
+  <button
+    className="reset-quiz"
+    onClick={[MockFunction]}
+  >
+    Reset Study List
+  </button>
+  <button
+    className="cards-to-show"
+    onClick={[MockFunction]}
+  >
+    Show Study List
+  </button>
+</div>
+`;

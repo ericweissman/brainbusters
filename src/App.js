@@ -6,15 +6,15 @@ import './styles/Main.scss';
 class App extends Component {
   constructor() {
     super();
-
     this.state = {
       questions: [],
       studyList: [],
-      showStudyList: false,
       showAllQuestions: false,
       guessedQuestions: [],
+      error: null
     }
   }
+
   componentDidMount() {
     fetch("http://memoize-datasets.herokuapp.com/api/v1/ewQuestions")
       .then(results => results.json())
@@ -23,12 +23,12 @@ class App extends Component {
           questions: result.ewQuestions
         })
       })
-      .catch(err => {
-        this.setState({ error: err })
-      })
-
-      this.populateStudyList()
+      .catch((error) => {
+        this.setState({ error: true })
+      });
+      this.populateStudyList();
     }
+
 
   populateStudyList = () => {
     if (Object.keys(localStorage).length > 0) {
@@ -41,29 +41,30 @@ class App extends Component {
 
   toggleAllQuestions = () => {
     this.setState({
-      showAllQuestions: !this.state.showAllQuestions
+      showAllQuestions: !this.state.showAllQuestions,
     })
   }
 
-  updateStudyList = (id) => {
+  updateStudyList = (id, answer) => {
     const questions = [...this.state.questions];
     const studyList = [...this.state.studyList];
-    const missedQuestions = questions.find((question) => {
+    const guess = questions.find((question) => {
       return question.id === id
     })
-    if (!studyList.includes(missedQuestions.id)) {
-      studyList.push(missedQuestions.id)
-    } else if (studyList.includes(missedQuestions.id)) {
-      alert('hi')
+
+    if (!studyList.includes(guess.id) && answer === false) {
+      studyList.push(guess.id)
+    } else if (studyList.includes(guess.id) && !this.state.showAllQuestions) {
+      let index = studyList.indexOf(guess.id)
+      studyList.splice(index, 1)
     }
+
     this.setState({
       studyList: studyList
     }, () => {
       localStorage.setItem('StudyList', JSON.stringify(studyList))
       this.updateGuessedCards(id);
     })
-
-    
   }
 
   updateGuessedCards = (id) => {
@@ -78,23 +79,46 @@ class App extends Component {
     this.setState({
       guessedQuestions: guessedArr
     })
+  }
 
+  resetQuiz = () => {
+    this.setState({
+      studyList: [],
+      guessedQuestions: [],
+      showAllQuestions: false
+    });
+    localStorage.clear();
   }
 
   render() {
+    let {error} = this.state
       return (
         <div className="App">
-          <Header
-            toggle={this.toggleAllQuestions}
-          />
-          <CardContainer
-            questions={this.state.questions}
-            updateStudyList={this.updateStudyList}
-            studyList={this.state.studyList}
-            showAllQuestions={this.state.showAllQuestions}
-            updateGuessedCards={this.updateGuessedCards}
-            guessedQuestions={this.state.guessedQuestions}
-          />
+        {!error ? (
+          <div>
+            <Header
+              toggle={this.toggleAllQuestions}
+              resetQuiz={this.resetQuiz}
+              studyList={this.state.studyList}
+              showAllQuestions={this.state.showAllQuestions}
+            />
+            <CardContainer
+              questions={this.state.questions}
+              updateStudyList={this.updateStudyList}
+              studyList={this.state.studyList}
+              showAllQuestions={this.state.showAllQuestions}
+              updateGuessedCards={this.updateGuessedCards}
+              guessedQuestions={this.state.guessedQuestions}
+            />
+          </div>
+        ) : (
+          <div className="error">
+            <h1>Error, huh? Well, see you later!</h1>
+            <img src="https://media.giphy.com/media/MACp8o4fXZfAA/giphy.gif"/>
+          </div>
+        )
+        }
+          
         </div>
       );
     }

@@ -18,7 +18,9 @@ exports[`Instructions should match snapshot when all data is passed correctly 1`
       If you want to view the questions you missed, choose Study List Only from the dropdown!
     </p>
   </div>
-  <button>
+  <button
+    onClick={[MockFunction]}
+  >
     Got it!
   </button>
 </div>

@@ -1,4 +1,4 @@
-const questions = [
+export const questions = [
   {
     "id": 1,
     "question": "What array prototype method would return a sum of the elements in an array?",
@@ -21,6 +21,9 @@ const questions = [
     "correct_answer": ".shift()",
     "concept": "prototypes"
   }
-]
+];
+
+export const studyList = [1, 2, 3];
+
 
 module.exports = mockData;

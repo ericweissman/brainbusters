@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot with all data passed in correctly 1`] = `
+<div
+  className="App"
+>
+  <div>
+    <Header
+      resetQuiz={[Function]}
+      showAllQuestions={false}
+      studyList={Array []}
+      toggle={[Function]}
+    />
+    <CardContainer
+      guessedQuestions={Array []}
+      questions={Array []}
+      showAllQuestions={false}
+      studyList={Array []}
+      updateGuessedCards={[Function]}
+      updateStudyList={[Function]}
+    />
+  </div>
+</div>
+`;

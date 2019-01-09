@@ -18,10 +18,15 @@ header {
   select {
     width: 248px;
     height: 30px;
-    font-family: 'Raleway';
+    font-family: $text;
     font-size: 15px;
     outline: none;
     text-align: center;
+    margin: 15px 0px 20px 0px;
+  }
+
+  button {
+    @include instructions-button
   }
 }
 

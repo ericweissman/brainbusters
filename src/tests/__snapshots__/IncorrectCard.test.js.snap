@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IncorrectCard should match snapshot when all data is passed correctly 1`] = `
+<div
+  className="incorrect-card"
+>
+  <h4>
+    Wrong!
+  </h4>
+  <img
+    src="https://media.giphy.com/media/BmshHM2V8ByjC/giphy.gif"
+  />
+  <p>
+    <Component />
+  </p>
+  <p
+    className="display-correct"
+  >
+    Correct Answer: 
+    Testing is my favorite hobby.
+  </p>
+  <p
+    className="incorrect-answer"
+  >
+    Your Answer: 
+    Daggob!
+  </p>
+  <button
+    className="back-to-quiz-button"
+    onClick={[Function]}
+  >
+    Back to Quiz
+  </button>
+</div>
+`;
