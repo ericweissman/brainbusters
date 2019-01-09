@@ -42,23 +42,23 @@ header {
 }
 
 .fas {
-  color: $grad2
+  color: $grad-title
 }
 
 @keyframes color-change {
   0% {
-    color: #ef32d9;
+    color: #9F3FB2;
     transform: scale(1);
   }
 
 
   50% {
-    color: #00dbde;
+    color: #CB53A3;
     transform: scale(1.08);
   }
 
   100% {
-    color: #ef32d9;
+    color: #9F3FB2;
     transform: scale(1);
   }
 }
@@ -103,7 +103,7 @@ header {
 @media screen and (max-width: 375px) {
     header {
       h1 {
-      font-size: 30px;
+      font-size: 38px;
     }
   }
 }
