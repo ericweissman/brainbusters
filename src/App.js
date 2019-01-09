@@ -95,7 +95,7 @@ class App extends Component {
       return (
         <div className="App">
         {!error ? (
-          <div>
+          <div className="app">
             <Header
               toggle={this.toggleAllQuestions}
               resetQuiz={this.resetQuiz}

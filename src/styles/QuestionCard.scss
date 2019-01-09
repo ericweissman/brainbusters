@@ -25,3 +25,13 @@
   display: flex;
 }
 
+@media screen and (max-width: 535px) {
+.question-card {
+  width: 300px;
+}
+.answer-btns {
+  display: flex;
+  flex-direction: column
+}
+
+}

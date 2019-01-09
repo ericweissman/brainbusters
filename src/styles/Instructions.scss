@@ -22,3 +22,9 @@
     @include got-it-button
   }
 }
+
+@media screen and (max-width: 1199px) {
+  .toggle-instructions-btn {
+    display: none;
+  }
+}
