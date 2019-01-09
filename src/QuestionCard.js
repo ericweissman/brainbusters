@@ -61,6 +61,7 @@ class QuestionCard extends Component {
           updateStudyList={this.props.updateStudyList}
           reset={this.resetAnswered}
           answered_correctly={this.state.answered_correctly}
+          studyList={this.props.studyList}
         />
       )
     } else {
@@ -75,6 +76,7 @@ class QuestionCard extends Component {
           showAllCards={this.props.showAllQuestions}
           reset={this.resetAnswered}
           answered_correctly={this.state.answered_correctly}
+          studyList={this.props.studyList}
         />
       )
     }

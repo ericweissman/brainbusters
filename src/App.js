@@ -49,13 +49,13 @@ class App extends Component {
 
 
   updateStudyList = (id, answer) => {
-    console.log(answer)
+    console.log('fire')
     const questions = [...this.state.questions];
     const studyList = [...this.state.studyList];
     const guess = questions.find((question) => {
       return question.id === id
     })
-    console.log('guess', guess.id)
+    console.log(answer)
     //id is not in studylist, and answer is false
     if (!studyList.includes(guess.id) && answer === false) {
       console.log('fires')
@@ -66,7 +66,6 @@ class App extends Component {
     else if (studyList.includes(guess.id) && !this.state.showAllQuestions) {
       let index = studyList.indexOf(guess.id)
       studyList.splice(index, 1)
-      console.log('fires2')
       // this.setState({
       //   studyList: studyList
       // })
@@ -121,6 +120,7 @@ class App extends Component {
               showAllQuestions={this.state.showAllQuestions}
               updateGuessedCards={this.updateGuessedCards}
               guessedQuestions={this.state.guessedQuestions}
+              studyList={this.state.studyList}
             />
           </div>
         ) : (

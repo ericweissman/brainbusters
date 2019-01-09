@@ -24,6 +24,8 @@ class CardContainer extends Component {
                 updateStudyList={updateStudyList}
                 updateGuessedCards={updateGuessedCards}
                 showAllQuestions={showAllQuestions}
+                studyList={this.props.studyList}
+
                 />
                 )
               }
@@ -47,6 +49,7 @@ class CardContainer extends Component {
                   updateStudyList={updateStudyList}
                   updateGuessedCards={updateGuessedCards}
                   showAllQuestions={showAllQuestions}
+                  studyList={this.props.studyList}
                 />
               )
             }
